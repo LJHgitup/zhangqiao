@@ -7,7 +7,7 @@ function aiAssistChoose () {
             duration:0,
             is_import:0,
             journal_base:[1,2,3,4,5],
-            cn_doc_num:15
+            cn_doc_num:10
         },
 
         // 英文检索条件

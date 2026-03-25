@@ -159,7 +159,7 @@
   margin-right: 0.08rem;
 }
 
-#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input[type='checkbox']:checked {
+#sclectDocPopOnly input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent input[type='checkbox']:checked {
     width: 0.26rem;
     height: 0.26rem;
     background: url(../img/checkbox.png) no-repeat;
@@ -476,6 +476,7 @@
   width: 0.24rem;
   height: 0.24rem;
   margin-right: 0.08rem;
+  border-radius: 0.04rem;
 }
 #sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft label .selectContainer,
 #sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft label .selectContainer {
@@ -1447,7 +1448,7 @@
 
 
 
-#sclectDocPopOnly .searchRecordsPopUp {
+#searchRecordsPopUpOnly {
   position: fixed;
   top: 0;
   left: 0;
@@ -1458,7 +1459,7 @@
   transform: translateY(100%);
   transition: 0.3s ease-in-out;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent {
   position: relative;
   background-color: #fff;
   margin-top: 1.35rem;
@@ -1468,7 +1469,7 @@
   padding-bottom: 0.3rem;
   border-radius: 0.3rem 0.3rem 0 0;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpClose {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpClose {
   position: absolute;
   top: 0.16rem;
   right: 0.2rem;
@@ -1480,7 +1481,7 @@
   background: url(../img/close.png) no-repeat;
   background-size: 100% 100%;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpTitle {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpTitle {
   font-family: PingFang SC, PingFang SC;
   font-weight: 700;
   font-size: 0.4rem;
@@ -1489,7 +1490,7 @@
   font-style: normal;
   text-transform: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsDesc {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsDesc {
   font-family: PingFang SC, PingFang SC;
   font-weight: 700;
   font-size: 0.24rem;
@@ -1499,7 +1500,7 @@
   text-transform: none;
   margin-top: 0.1rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1513,25 +1514,25 @@
   box-sizing: border-box;
   margin: 0.3rem auto 0.4rem auto;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabItem {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabItem {
   width: 3.55rem;
   height: 0.72rem;
   line-height: 0.72rem;
   border-radius: 0 0.16rem 0.16rem 0;
   border: 0.02rem solid #CCCCCC;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabItem:nth-child(1) {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabItem:nth-child(1) {
   border-radius: 0.16rem 0 0 0.16rem;
   border-right: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabActive {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabActive {
   color: #fff;
   border: 0.02rem solid transparent;
   background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
   border-left: #dd50ff 0.02rem solid;
   border-right: #3476fe 0.02rem solid;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList {
   width: 100%;
   height: 100%;
   margin-top: 0.3rem;
@@ -1542,7 +1543,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem,
 #sclectDocPopOnly .nextStepContent .searchListItem{
   width: 7.1rem;
   display: flex;
@@ -1555,13 +1556,13 @@
   margin-bottom: 0.2rem;
   position: relative;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo{
   margin-top: 0.17rem;
   margin-left: 0.15rem;
   width: 100%;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction{
   font-family: PingFang SC, PingFang SC;
   font-weight: bold;
@@ -1574,7 +1575,7 @@
   justify-content: space-between;
   align-items: center;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemTitle,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemTitle,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemTitle{
   width: 4.5rem;
   display: -webkit-box;
@@ -1582,12 +1583,12 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemTitleExpand,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemTitleExpand,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemTitleExpand{
   width: 4.5rem;
   overflow: visible;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemAction,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemAction,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemAction{
   width: 1.1rem;
   height: 0.48rem;
@@ -1604,7 +1605,7 @@
   margin-left: 0.25rem;
   margin-right: 0.2rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemAction::before,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemAction::before,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemAction::before{
   content: "";
   display: inline-block;
@@ -1615,13 +1616,13 @@
   background-size: 100% 100%;
   transform: translateY(0.02rem);
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear ,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear ,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTypeAndYear{
   display: flex;
   margin-top: 0.1rem;
   margin-bottom: 0.2rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear .listItemType,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear .listItemType,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTypeAndYear .listItemType{
   width: 1.08rem;
   height: 0.3rem;
@@ -1637,7 +1638,7 @@
   text-transform: none;
   margin-right: 0.15rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear .listItemYear ,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear .listItemYear ,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTypeAndYear .listItemYear{
   width: 0.95rem;
   height: 0.3rem;
@@ -1652,13 +1653,13 @@
   font-style: normal;
   text-transform: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle{
   display: flex;
   align-items: center;
   margin-bottom: 0.15rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemCore,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemCore,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemCore{
   width: 0.6rem;
   height: 0.28rem;
@@ -1675,7 +1676,7 @@
 }
 
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .isCoreList ,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .isCoreList ,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .isCoreList{
   height: 0.3rem;
   border-radius: 0.08rem;
@@ -1692,7 +1693,7 @@
   margin-bottom: 0.15rem;
   display: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .isCoreList li,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .isCoreList li,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .isCoreList li{
   background: rgba(52, 118, 254, 0.1);
   width: 1.2rem;
@@ -1703,7 +1704,7 @@
   border-radius: 0.08rem;
 }
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo{
   font-family: PingFang SC, PingFang SC;
   font-weight: 600;
@@ -1715,7 +1716,7 @@
   display: flex;
   align-items: center;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo span ,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo span ,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo span{
   max-width: 5.8rem;
   display: -webkit-box;
@@ -1724,14 +1725,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo.coreAndLevelTwoTitle .listItemLevelTwo .spanCollapse,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo.coreAndLevelTwoTitle .listItemLevelTwo .spanCollapse,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo .spanCollapse{
   -webkit-line-clamp: none !important;
   height: auto !important;
 }
 
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAuthor,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAuthor,
 #sclectDocPopOnly .nextStepContent .listItemAuthor{
   width: 5.8rem;
   white-space: nowrap;
@@ -1747,7 +1748,7 @@
   margin-left: 0.02rem;
   margin-bottom: 0.15rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAuthor::before,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAuthor::before,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAuthor::before{
   content: "";
   width: 0.24rem;
@@ -1758,7 +1759,7 @@
 }
 
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts{
     width: 100%;
     font-family: PingFang SC, PingFang SC;
@@ -1771,12 +1772,12 @@
     position: relative;
     display: flex;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts p,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts p,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts p{
     width: 85%;
     padding-left: 0.15rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts .listItemAbstractsCollapse,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts .listItemAbstractsCollapse,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts .listItemAbstractsCollapse{
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -1784,7 +1785,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAbstracts::before,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAbstracts::before,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts::before{
   content: "";
   width: 0.24rem;
@@ -1796,7 +1797,7 @@
 
 
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchAbsTogg,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchAbsTogg,
 #sclectDocPopOnly .nextStepContent .searchAbsTogg{
   position: absolute;
   right: 1.7rem;
@@ -1811,7 +1812,7 @@
   font-style: normal;
   text-transform: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchAbsTogg::after ,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchAbsTogg::after ,
 #sclectDocPopOnly .nextStepContent .searchAbsTogg::after{
   content: "";
   display: inline-block;
@@ -1822,7 +1823,7 @@
   transform: translateY(-0.02rem);
 }
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .abstractsTogg ,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .abstractsTogg ,
 #sclectDocPopOnly .nextStepContent .abstractsTogg{
   position: absolute;
   right: 1.5rem;
@@ -1841,7 +1842,7 @@
 #sclectDocPopOnly .nextStepContent .abstractsTogg {
   top: 0.22rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .abstractsTogg::after,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .abstractsTogg::after,
 #sclectDocPopOnly .nextStepContent .abstractsTogg::after{
   content: "";
   display: inline-block;
@@ -1851,7 +1852,7 @@
   background-size: 100% 100%;
   transform: translateY(-0.02rem);
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .abstractsClose::after,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .abstractsClose::after,
 #sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .abstractsClose::after{
   content: "";
   display: inline-block;
@@ -1861,7 +1862,7 @@
   background-size: 100% 100% !important;
   transform: translateY(-0.02rem);
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded::after,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded::after,
 #sclectDocPopOnly .nextStepContent .searchListAdded::after{
   position: absolute;
   right: 0;
@@ -1873,20 +1874,20 @@
   background: url(../img/added.png) no-repeat;
   background-size: 100% 100%;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded .listItemAction,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded .listItemAction,
 #sclectDocPopOnly .nextStepContent .listItemAction{
   background: #bbbbbb !important;
   color: #fff !important;
   display: none;
 }
 
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter {
 	position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1897,7 +1898,7 @@
   padding-bottom: 0.4rem;
   padding-top: 0.3rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div {
   width: 2.2rem;
   height: 0.72rem;
   background: #fff;
@@ -1910,7 +1911,7 @@
   font-style: normal;
   text-transform: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div:first-child::before {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div:first-child::before {
   content: "";
   display: inline-block;
   width: 0.12rem;
@@ -1920,7 +1921,7 @@
   background-size: 100% 100%;
   transform: translateY(0.02rem);
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div:last-child::after {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div:last-child::after {
   content: "";
   display: inline-block;
   width: 0.12rem;
@@ -1930,7 +1931,7 @@
   background-size: 100% 100%;
   transform: translateY(0.02rem);
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer {
   width: 100%;
   height: 0.72rem;
   background: #f5f7fb;
@@ -1945,19 +1946,19 @@
   font-style: normal;
   text-transform: none;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .uploadSum,
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .selectSum,
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .searchRecordsTotal {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .uploadSum,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .selectSum,
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .searchRecordsTotal {
   color: #FD0303;
   font-weight: bold;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsSave {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsSave {
   width: 100%;
   height: 1.72rem;
   background: #f5f7fb;
   padding-top: 0.25rem;
 }
-#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsSave div {
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsSave div {
   width: 6.7rem;
   height: 0.88rem;
   line-height: 0.88rem;
@@ -2046,13 +2047,7 @@
 /*# sourceMappingURL=selectedChangePopUp.css.map */
 
 
-
-
-
-
-
-
-#sclectDocPopOnly .changeOneTips {
+#changeOneTipsOnly {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -2061,7 +2056,7 @@
   background: rgba(0, 0, 0, 0.3);
   z-index: 9999991;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent {
   position: relative;
   width: 99%;
   padding: 0.9rem 0.25rem 0.35rem 0.25rem;
@@ -2071,7 +2066,7 @@
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   margin: 40% auto 0 auto;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsClose {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent .changeOneTipsClose {
   position: absolute;
   top: 0.16rem;
   right: 0.2rem;
@@ -2083,18 +2078,18 @@
   background: url(../img/close.png) no-repeat;
   background-size: 100% 100%;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent p {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent p {
   font-size: 0.24rem;
   line-height: 0.4rem;
   text-align: center;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0.35rem;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn div {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn div {
   width: 1.4rem;
   height: 0.6rem;
   border-radius: 0.4rem;
@@ -2103,11 +2098,11 @@
   color: #fff;
   font-size: 0.24rem;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn .changeOneTipsBtnCancel {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn .changeOneTipsBtnCancel {
   background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
   margin-right: 0.5rem;
 }
-#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn .changeOneTipsBtnSave {
+#changeOneTipsOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn .changeOneTipsBtnSave {
   background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
 }
 /*# sourceMappingURL=changeOne.css.map */

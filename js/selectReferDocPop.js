@@ -1140,20 +1140,22 @@ function selectReferDocPop(){
 
      // 结构
      this.changeOneHtml = () => {
-       $(".changeOneTips").remove();
+       $("#changeOneTipsOnly").remove();
        $('body').append(`
-         <div class="changeOneTips">
-             <div class="changeOneTipsContent">
-                 <div class="changeOneTipsClose"></div>
-                 <p>页面显示的文献将被移除，如需查看历史数据可点击【查找记录】按钮，是否继续换一批文献？</p>
-                 <div class="changeOneTipsBtn">
-                     <div class="changeOneTipsBtnCancel">取消</div>
-                     <div class="changeOneTipsBtnSave">确定</div>
+        <div id="changeOneTipsOnly">
+             <div class="changeOneTips">
+                 <div class="changeOneTipsContent">
+                     <div class="changeOneTipsClose"></div>
+                     <p>页面显示的文献将被移除，如需查看历史数据可点击【查找记录】按钮，是否继续换一批文献？</p>
+                     <div class="changeOneTipsBtn">
+                         <div class="changeOneTipsBtnCancel">取消</div>
+                         <div class="changeOneTipsBtnSave">确定</div>
+                     </div>
                  </div>
              </div>
          </div>`)
 
-         $(".changeOneTips").show();
+         $("#changeOneTipsOnly").show();
      }
      
      // 空数据结构
@@ -1706,37 +1708,39 @@ function selectReferDocPop(){
 
     // 弹窗主体结构
     this.searchRecordsHtml = function () {
-    	$(".searchRecordsPopUp").remove();
+    	$("#searchRecordsPopUpOnly").remove();
         $('body').append(`
-        <div class="searchRecordsPopUp">
-            <div class="searchRecordsPopUpContent">
-                <div class="searchRecordsPopUpClose"></div>
-                <div class="searchRecordsPopUpTitle">
-                    查找记录
-                </div>
-                <div class="searchRecordsDesc">
-                    （只包含本次查找期间的数据记录）
-                </div>
-                <div class="searchRecordsTab">
-                    <div class="searchRecordsTabItem ${this.param.search_language==0?'searchRecordsTabActive':''}" data-search-language="0">
-                        中文文献
+        <div id="searchRecordsPopUpOnly">
+            <div class="searchRecordsPopUp">
+                <div class="searchRecordsPopUpContent">
+                    <div class="searchRecordsPopUpClose"></div>
+                    <div class="searchRecordsPopUpTitle">
+                        查找记录
                     </div>
-                    <div class="searchRecordsTabItem ${this.param.search_language==1?'searchRecordsTabActive':''}"  data-search-language="1">
-                        英文文献
+                    <div class="searchRecordsDesc">
+                        （只包含本次查找期间的数据记录）
                     </div>
-                </div>
-                <div class="searchRecordsPopUpList">
-                    
-                </div>
-                <div class="searchRecordsFooter">
-                    <div class="searchRecordsPag">
-                        <div id="search_pre_page">上页</div>
-                        <div id="search_current_page">本页</div>
-                        <div id="search_next_page">下页</div>
+                    <div class="searchRecordsTab">
+                        <div class="searchRecordsTabItem ${this.param.search_language==0?'searchRecordsTabActive':''}" data-search-language="0">
+                            中文文献
+                        </div>
+                        <div class="searchRecordsTabItem ${this.param.search_language==1?'searchRecordsTabActive':''}"  data-search-language="1">
+                            英文文献
+                        </div>
                     </div>
-                    <div class="searchRecordsTotalContainer">
-				                        本次操作已选择中文文献* <span class="uploadSum">0</span> 篇，
-				                        英文文献* <span class="selectSum">0</span> 篇；
+                    <div class="searchRecordsPopUpList">
+                        
+                    </div>
+                    <div class="searchRecordsFooter">
+                        <div class="searchRecordsPag">
+                            <div id="search_pre_page">上页</div>
+                            <div id="search_current_page">本页</div>
+                            <div id="search_next_page">下页</div>
+                        </div>
+                        <div class="searchRecordsTotalContainer">
+                                            本次操作已选择中文文献* <span class="uploadSum">0</span> 篇，
+                                            英文文献* <span class="selectSum">0</span> 篇；
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1748,7 +1752,7 @@ function selectReferDocPop(){
     	this.param.search_language=this.param.language;
     	 this.searchRecordsHtml(1);
          this.searchRecordsListHtml(1);
-         $(".searchRecordsPopUp").css('transform', 'translateY(0)')
+         $("#searchRecordsPopUpOnly").css('transform', 'translateY(0)')
         setTimeout(()=>{
             this.popUpListHeightSearchRecords();
         },280)
@@ -1757,7 +1761,7 @@ function selectReferDocPop(){
 
     // 关闭弹窗
     this.searchRecordsPopUpClose = function () {
-        $(".searchRecordsPopUp").css('transform', 'translateY(100%)');
+        $("#searchRecordsPopUpOnly").css('transform', 'translateY(100%)');
     }
 
 
@@ -2049,13 +2053,13 @@ function selectReferDocPop(){
         	this.changeOneHtml();
         });
         $("body").on('click', '.changeOneTipsBtnCancel', (e) => {
-        	$(".changeOneTips").remove();
+        	$("#changeOneTipsOnly").remove();
         });
         $("body").on('click', '.changeOneTipsClose', (e) => {
-        	$(".changeOneTips").remove();
+        	$("#changeOneTipsOnly").remove();
         });
         $("body").on('click', '.changeOneTipsBtnSave', (e) => {
-        	$(".changeOneTips").remove();
+        	$("#changeOneTipsOnly").remove();
         	 this.searchAgain();
         });
         

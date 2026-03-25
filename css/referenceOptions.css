@@ -185,4 +185,9 @@
   top: 0.02rem;
   right: -0.4rem;
 }
+
+#referenceOptionsOnly .uploadReferenceDesc {
+  color: #ff0a0e;
+  font-size: .22rem;
+}
 /* 增加模块私有样式end */

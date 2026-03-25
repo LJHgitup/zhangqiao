@@ -152,12 +152,25 @@ function aiAssistChoose () {
     // 提交确认
     this.commit=function() {
         this.params.cn_search_param.duration=$('input[name="cnYearKey"]:checked').attr("data-cnYearKey");
-        this.params.cn_search_param.cn_doc_num=$('input[name="cnNumKey"]').val();
+        this.params.cn_search_param.cn_doc_num=Number($('input[name="cnNumKey"]').val());
+        this.params.en_search_param.duration=$('input[name="enYearKey"]:checked').attr("data-enYearKey");
+        this.params.en_search_param.en_doc_num=Number($('input[name="enNumKey"]').val());
+
+        if(this.params.cn_search_param.cn_doc_num+this.params.en_search_param.en_doc_num<1){
+            tip("文献总数至少1篇！");
+            return;
+        }
+
         if(this.params.cn_search_param.cn_doc_num==null||this.params.cn_search_param.cn_doc_num==""){
             tip("请填写中文参考文献数");
             return;
         }
-        if(this.params.cn_search_param.cn_doc_num>100){
+        if(this.params.en_search_param.en_doc_num==null||this.params.en_search_param.en_doc_num==""){
+            tip("请填写英文参考文献数");
+            return;
+        }
+
+        if((this.params.cn_search_param.cn_doc_num + this.params.en_search_param.en_doc_num)>100){
             tip("文献总数不得超过100！");
             return;
         }
@@ -166,20 +179,7 @@ function aiAssistChoose () {
         this.params.cn_search_param.journal_base = $('input[name="cnJournalType"]:checked').map(function() {
             return $(this).attr("data-cnjournaltype"); // 返回当前选中多选框的值
         }).get();
-        this.params.en_search_param.duration=$('input[name="enYearKey"]:checked').attr("data-enYearKey");
-        this.params.en_search_param.en_doc_num=$('input[name="enNumKey"]').val();
-        if(this.params.en_search_param.en_doc_num==null||this.params.en_search_param.en_doc_num==""){
-            tip("请填写英文参考文献数");
-            return;
-        }
-        if(this.params.en_search_param.en_doc_num>100){
-            tip("文献总数不得超过100！");
-            return;
-        }
-        if(this.params.cn_search_param.cn_doc_num+this.params.en_search_param.en_doc_num<1){
-            tip("文献总数至少1篇！");
-            return;
-        }
+
         this.params.en_search_param.is_import=$('input[name="enJournalLevelKey"]:checked').attr("data-enjournallevelkey");
         this.params.en_search_param.journal_base = $('input[name="enJournalType"]:checked').map(function() {
             return $(this).attr("data-enjournaltype"); // 返回当前选中多选框的值
@@ -209,7 +209,6 @@ function aiAssistChoose () {
             }
         });
 
-
         // 关闭按钮事件
         $('body').on('click', `.aiSelectCloseBtn`, () => {
             this.closeAiAssPopup()
@@ -220,22 +219,6 @@ function aiAssistChoose () {
             this.commit()
         })
 
-        // 文献数量-实时过滤非数字字符
-        $('body').on('input', '.literatureCount', (e) =>{
-            // 允许输入数字和删除操作
-            var val = $(e.currentTarget).val();
-            val=val.replace(/[^0-9]/g, '')
-            if(val==0){
-                return;
-            }
-            // 禁止以0开头
-            if (val.startsWith('0')) {
-                val = val.substring(1);
-            }
-            $(e.currentTarget).val(val);
-        });
-
-
         // 中文期刊等级切换事件
         $("input[name='cnJournalLevelKey']").on("input click", function (e) {
             let  is_import=$(e.currentTarget).attr("data-cnjournallevelkey");
@@ -245,6 +228,7 @@ function aiAssistChoose () {
                 $(".selectCnJournalLevel").hide();
             }
         })
+
         // 英文期刊等级切换事件
         $("input[name='enJournalLevelKey']").on("input click", function (e) {
             let  is_import=$(e.currentTarget).attr("data-enjournallevelkey");
@@ -254,6 +238,8 @@ function aiAssistChoose () {
                 $(".selectEnJournalLevel").hide();
             }
         })
+
+        // 英文数据库点击事件
         $('body').on('click', 'input[name="enJournalType"]', function (e) {
             var chelen = $('input[name="enJournalType"]:checked');
             if (chelen.length == 0) {
@@ -262,6 +248,8 @@ function aiAssistChoose () {
                 return
             }
         })
+
+        // 中文数据库点击事件
         $('body').on('click', 'input[name="cnJournalType"]', function (e) {
             var chelen = $('input[name="cnJournalType"]:checked');
             if (chelen.length == 0) {
@@ -270,13 +258,38 @@ function aiAssistChoose () {
                 return
             }
         })
+
+        // 处理文献数量只能输入数字
+        $('body').on('input', '.literatureCount', (e) =>{
+            this.changeLiteratureCount(e);
+        })
     }
+
+    // 处理文献数量输入
+    this.changeLiteratureCount = (e) => {
+        let originalVal = $(e.target).val().trim();
+
+        let val = originalVal.replace(/\D/g, '');
+        val = val.replace(/^0+/, '') || '1';
+
+        if (val.length >= 3) {
+            val = val.slice(0, 3);
+            $(e.target).parent().siblings(".literatureMaxTip").show();
+        } else {
+            $(e.target).parent().siblings(".literatureMaxTip").hide();
+        }
+
+        $(e.target).val(val);
+    }
+
+    // 获取结果
     this.getResult=function(){
         let airesult={};
         airesult.cn_search_param=this.params.cn_search_param;
         airesult.en_search_param=this.params.en_search_param;
         return airesult;
     }
+
     // 弹窗结构
     this.choosePopupHtml=function(){
         $('body').append(`
@@ -328,9 +341,12 @@ function aiAssistChoose () {
                                 <ul class="selectCnJournalLevel"  style="display:none">
                                 
                                 </ul>
-                                <div class="aiSelectItemLabel">
+                                <div class="aiSelectItemLabel" style="margin-top: 0.5rem;">
                                     <span class="LabelTitle">文献数量：</span>
-                                    <input type="number" name="cnNumKey" class="literatureCount" value="15" min="0" max="100">
+                                    <input type="text" name="cnNumKey" autocomplete="off" class="literatureCount" value="10">
+                                </div>
+                                <div class="literatureMaxTip">
+                                    文献总数不得超过100！
                                 </div>
                             </div>
                         </div>
@@ -377,9 +393,12 @@ function aiAssistChoose () {
                                 <ul class="selectEnJournalLevel" style="display:none">
                                 
                                 </ul>
-                                <div class="aiSelectItemLabel">
+                                <div class="aiSelectItemLabel" style="margin-top: 0.5rem;">
                                     <span class="LabelTitle">文献数量：</span>
-                                    <input type="number" name="enNumKey" class="literatureCount" value="5" min="0" max="100">
+                                    <input type="text" name="enNumKey" autocomplete="off" class="literatureCount" value="5">
+                                </div>
+                                <div class="literatureMaxTip">
+                                    文献总数不得超过100！
                                 </div>
                             </div>
                         </div>

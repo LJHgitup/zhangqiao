@@ -85,7 +85,7 @@ function ckwxUploadPop() {
                         </div>
                   
                     </div>
-                          <div class="supplementpopup_self file_1_about"  style="font-size: .24rem;color: #333;margin-top: .1rem;text-align: center;">
+                          <div class="supplementpopup_self file_1_about"  style="font-size: .24rem;color: #333;text-align: center;">
                             最多<em >${this.param.fileTypeConfig[1].maxCount}</em>篇，可<em >批量上传</em>，单文件<em >${Number(this.param.fileTypeConfig[1].maxSize / (1024 * 1024))}M内</em>，支持<em >word、pdf</em>格式</em></div>
                     <div class="supplementpopup_table-ckwx" style="display:none;">
                           <div class="layui-upload uploadscroll uploadscrollckwx " style="max-height: 4.7rem;overflow: auto;margin-top: .4rem;">
@@ -151,12 +151,12 @@ function ckwxUploadPop() {
             var upload = layui.upload;
             var layer = layui.layer;
             var $ = layui.jquery;
-
             // 创建上传实例
             that.param.uploadInstance = upload.render({
                 elem: '#ID-upload-demo-filesup-ckwx',  // 绑定上传按钮
                 multiple: true,  // 支持多文件上传
-                url: url + '/ai/uploadpro.html', // 上传接口地址
+                // url: url + '/ai/uploadpro.html', // 上传接口地址
+                url:'http://192.168.0.150:8082/ai/uploadpro.html',//删除
                 method: 'post',  // 请求方法
                 auto: false,  // 不自动上传（选择后直接添加到列表）
                 size: that.param.fileTypeConfig[that.param.currentFileType].maxSize,  // 单个文件大小限制
@@ -290,6 +290,7 @@ function ckwxUploadPop() {
                             layer.msg("上传失败：" + (res.msg || '未知错误'));
                         }
                     }
+
                 },
                 error: function (index, upload) {
                     // 进度设为0%
@@ -303,6 +304,8 @@ function ckwxUploadPop() {
                 }
             });
         });
+
+        
     }
 
     // 校验去重
@@ -384,7 +387,8 @@ function ckwxUploadPop() {
         });
         $('#confirmcommonpopup').show();
         $(`.${this.param.popClass}confirm`).show();
-        console.log(this.param.tempFileList);
+       $('.uploadscrollckwx').scrollTop($('.layui-upload-list-ckwx').height())
+
 
     }
 
@@ -401,7 +405,6 @@ function ckwxUploadPop() {
         // 按钮上方文件赋值
         $('.selfnumt').text(selfCount);
         $('.supplementpopupsumself1').toggle(selfCount > 0);
-        $('.ckwxUpload1confirm').toggle(selfCount > 0);
         $('.addFilesTips').toggle(selfCount > 0);
         const hasFalseItem = this.param.tempFileList.some(item => item.is_use_content === 0);
         $('.purposefileTipNextstep').toggle(hasFalseItem);

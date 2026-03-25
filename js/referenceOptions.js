@@ -86,6 +86,8 @@ function referenceOptions() {
         if (typeof this.params.ckwxUploadPop.param.savedFileList != "undefined" && this.params.ckwxUploadPop.param.savedFileList && this.params.ckwxUploadPop.param.savedFileList.length > 0) {
             this.params.hasFile = 1;
             this.params.isSelectedFile = 1;
+            $('.uploadReferenceDesc').text(`已上传${this.params.ckwxUploadPop.param.savedFileList.length}篇`);
+
         }
         this.modelChanged();
     }
@@ -315,10 +317,11 @@ function referenceOptions() {
                                 <div class="ownedLiteraturetit">补充自有文献:
                                     <em class="text_enhancetopsicon" style="position: absolute;cursor: pointer;" data-coll-even="hover" data-track-id="参考文献-补充自有文献-问号"></em>
                                     <div class="current_introduction" style="display:none;top: unset;width: 4rem;">
-                                        <p>可上传已公开发表的论文、专利及标准，会作为引用来源并生成文末文献列表</p>
+                                        <p>（已公开发表的论文、专利及标准（含个人已发表成果），会作为引用来源并生成文末文献列表）</p>
                                     </div>
                                 </div>
                                 <div class="ownedLiteraturebtn uploadReference" data-coll-even="click" data-track-id="参考文献-补充自有文献-上传文献">传文献</div>
+                                <div class="uploadReferenceDesc"></div>
                             </div>
                         </div>
                     </div>

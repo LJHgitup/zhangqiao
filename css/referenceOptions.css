@@ -1,0 +1,188 @@
+#opening_wxzl {
+  background: #faf8ff;
+  width: 100%;
+  height: 100vh;
+  padding-top: .15rem;
+}
+#referenceOptionsOnly .referenceOptions {
+  width: 100%;
+  font-family: PingFang SC, PingFang SC;
+  color: #333;
+  padding-left: 0.2rem;
+  margin-top:0.1rem;
+}
+#referenceOptionsOnly .referenceOptions .mandatory::before {
+  content: '*';
+  color: #ff0a0e;
+  font-size: 0.28rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsTitle {
+  font-weight: 400;
+  font-size: 0.28rem;
+  padding-left: 0.02rem;
+  position: relative;
+  width: 2.45rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsTop .referenceOptionsUl {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsTop .referenceOptionsUl li label {
+  display: flex;
+  align-items: center;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsTop .referenceOptionsUl li label input {
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.05rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsTop .referenceOptionsUl li label span {
+  font-weight: 400;
+  font-size: 0.28rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsDesc {
+  align-items: center;
+  margin-top: 0.1rem;
+  display: flex;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsDesc .OptionsDescText {
+  color: #ff0a0e;
+  font-size: 0.22rem;
+  margin-right: 0.15rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsDesc .OptionsEdit {
+  width: 0.8rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  font-size: 0.24rem;
+  color: #fff;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsBottom {
+  display: flex;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsBottom .uploadReference {
+  width: 1.3rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  font-size: 0.24rem;
+  color: #fff;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+}
+#referenceOptionsOnly .referenceOptions .referenceOptionsBottom .uploadReferenceDesc {
+  color: #ff0a0e;
+  font-size: 0.22rem;
+}
+/* 增加模块私有样式start */
+#referenceOptionsOnly .item_formList {
+  width: 7.1rem;
+  height: auto;
+  background: #fff;
+  border-radius: .24rem;
+  padding-right: .15rem;
+  padding-top: .15rem;
+  padding-bottom: .1rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+#referenceOptionsOnly .item_formList .itemTitle_bg {
+  width: 7.15rem;
+  height: .85rem;
+  background: linear-gradient(180deg, #eebeff 0, rgba(238, 190, 255, 0) 100%);
+  border-radius: .24rem;
+  border: .04rem solid #fff;
+  border-bottom: 0;
+  opacity: .3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#referenceOptionsOnly .item_formList .item_formList_title {
+  height: .55rem;
+  display: flex;
+  align-items: center;
+  padding-left: .2rem;
+  margin-top: .25rem;
+  line-height: .7rem;
+  position: relative;
+}
+
+#referenceOptionsOnly .item_formList .item_formList_title>div:nth-child(2) h2 {
+  font-weight: bold;
+  color: #333333;
+  margin-left: unset;
+  font-size: .33rem;
+}
+
+#referenceOptionsOnly .item_formList .item_formList_title>div:nth-child(2) h2::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.26rem;
+  background: url(../img/title_icon.png) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
+#referenceOptionsOnly .item_formList .item_formList_title>div:nth-child(1) {
+  margin-top: -0.02rem;
+}
+
+#referenceOptionsOnly .item_formList .item_formList_title>div:nth-child(1) img {
+  width: .508rem;
+  height: .26rem;
+}
+
+#referenceOptionsOnly .item_formList .item_formList_title>div:nth-child(2) h2 span {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #999;
+  line-height: 14px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: .2rem;
+  float: right;
+  margin-top: .22rem;
+}
+
+#referenceOptionsOnly .current_introduction {
+  font-size: 12px;
+  color: #333;
+  line-height: 17px;
+  width: auto;
+  padding: 10px;
+  position: absolute;
+  left: 76px;
+  top: -67px;
+  background: #fff;
+  box-shadow: 0 3px 17px 0 rgba(153, 153, 153, 0.2);
+  border-radius: 8px 8px 8px 8px;
+  z-index: 9;
+}
+
+#referenceOptionsOnly .text_enhancetopsicon {
+  width: 17px;
+  height: 17px;
+  background: url(../img/writeIcon.png) -149px -59px no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: 0.02rem;
+  right: -0.4rem;
+}
+/* 增加模块私有样式end */

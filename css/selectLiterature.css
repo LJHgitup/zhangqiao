@@ -1,0 +1,2157 @@
+#sclectDocPopOnly .selectLiteraturePopUp{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+ /* // transform: translateY(100%); */
+  transition: top 0.8s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+}
+#sclectDocPopOnly .selectLiteratureContent, #sclectDocPopOnly .nextStepContent {
+     background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
+    width: 100%;
+    height: 100%;
+    padding: 0.4rem 0.2rem 0rem 0.2rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 1.4rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+ #sclectDocPopOnly .selectLiteratureContent .commonloadingname,  #sclectDocPopOnly .nextStepContent .commonloadingname {
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+#sclectDocPopOnly .selectLiteratureContent::-webkit-scrollbar, #sclectDocPopOnly .nextStepContent::-webkit-scrollbar {
+  display: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .closeSelectLiteraturePopUp, #sclectDocPopOnly .nextStepContent .closeNextStepContent {
+  position: absolute;
+  top: 0.16rem;
+  right: 0.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.38rem;
+  background: url(../img/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureTitle, #sclectDocPopOnly .nextStepContent .selectLiteratureTitle {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 600;
+  font-size: 0.4rem;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 0.2rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .tabSwitch, #sclectDocPopOnly .nextStepContent .tabSwitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.32rem;
+  color: #333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  box-sizing: border-box;
+}
+#sclectDocPopOnly .selectLiteratureContent .tabSwitch .tabItem, #sclectDocPopOnly .nextStepContent .tabSwitch .tabItem {
+  width: 3.55rem;
+  height: 0.72rem;
+  line-height: 0.72rem;
+  border-radius: 0 0.16rem 0.16rem 0;
+  border: 0.02rem solid #CCCCCC;
+}
+#sclectDocPopOnly .selectLiteratureContent .tabSwitch .tabItem:nth-child(1), #sclectDocPopOnly .nextStepContent .tabSwitch .tabItem:nth-child(1) {
+  border-radius: 0.16rem 0 0 0.16rem;
+  border-right: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .tabSwitch .tabItem.active, #sclectDocPopOnly .nextStepContent .tabSwitch .tabItem.active {
+  color: #fff;
+  border: 0.02rem solid transparent;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-left: #dd50ff 0.02rem solid;
+  border-right: #3476fe 0.02rem solid;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureTips, #sclectDocPopOnly .nextStepContent .selectLiteratureTips {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(222, 80, 255, 0.2) 0%, rgba(137, 72, 245, 0.2) 53.37%, rgba(52, 118, 254, 0.2) 100%);
+  border-radius: 0.2rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #1A0C5C;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  padding: 0.2rem 0.2rem 0.2rem;
+  margin: 0.3rem auto 0.5rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .yearView, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem .yearView {
+  position: absolute;
+  right: 0rem;
+  top: 0.4rem;
+  background: #f5f8ff;
+  color: #3476fe;
+  width: 1.2rem;
+  height: 0.3rem;
+  font-size: 0.2rem;
+  text-align: center;
+  line-height: 0.3rem;
+  border-radius: 0.3rem;
+  display: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem h5, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem h5 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #666666;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem h5::before, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem h5::before {
+  content: '*';
+  display: inline-block;
+  width: 0.15rem;
+  height: 0.2rem;
+  margin-right: 0.05rem;
+  color: #ff0a0e;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem h6, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem h6 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #666666;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label {
+  display: flex;
+  align-items: center;
+  margin-right: 0.45rem;
+  transform: translateY(0.02rem);
+  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label:last-child, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label:last-child {
+  margin-right: 0;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input {
+  margin-right: 0.08rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input[type='checkbox']:checked {
+    width: 0.26rem;
+    height: 0.26rem;
+    background: url(../img/checkbox.png) no-repeat;
+    background-size: contain;
+    border-radius: 0;
+    border: none;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input[type='checkbox'], #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input[type='checkbox'] {
+  width: 0.25rem;
+  height: 0.25rem;
+  border: 0.02rem solid #999999;
+  border-radius: 0.05rem;
+  background: #fff;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label span, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label span {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #333333;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .selectLiteratureNum input, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem .selectLiteratureNum input {
+  width: 2.5rem;
+  height: 0.72rem;
+  border-radius: 0.12rem;
+  border: 0.02rem solid #DDDDDD;
+  padding-left: 0.2rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #333333;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .selectLiteratureNum span,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .selectLiteratureNum span {
+  color: #ff0a0e;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords {
+  width: 5.29rem;
+  height: 1.2rem;
+  border-radius: 0.12rem;
+  position: relative;
+  background: #fff;
+  outline: 0;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border: 0.01rem solid #ddd;
+  font-size: 0.26rem;
+  font-family: monospace;
+  color: #aaa;
+  overflow: scroll;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .retrieveKeywordsTip,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .retrieveKeywordsTip {
+  user-select: none;
+  color: #aaa;
+  font-size: 0.26rem;
+  font-family: monospace;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .selectKw,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .selectKw {
+  list-style-type: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .selectKw input,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .selectKw input {
+  border: 0;
+  outline: 0;
+  height: 0.24rem;
+  width: 100%;
+  flex: 1 1 100%;
+  background: transparent;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .selectKw li,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .selectKw li {
+  background-color: #ecf5ff;
+  padding-top: 0.05rem;
+  line-height: 0.32rem;
+  font-size: 0.24rem;
+  color: #409eff;
+  border: 0.01rem solid #d9ecff;
+  border-radius: 0.04rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+  margin-bottom: 0.1rem;
+  margin-right: 0.15rem;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  white-space: normal;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .selectKw li:last-child,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .selectKw li:last-child {
+  border: 0;
+  flex: 1 1 auto;
+  background: transparent;
+  user-select: unset;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .selectKw li div,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .selectKw li div {
+  max-width: calc(100% - 0.32rem);
+  white-space: normal;
+  word-wrap: break-word;
+  user-select: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .retrieveKeywords .selectKw li img,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .retrieveKeywords .selectKw li img {
+  height: 0.32rem;
+  width: 0.32rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .aiResKeyWord,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .aiResKeyWord {
+  width: 1.79rem;
+  height: 0.72rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.92rem;
+  overflow: hidden;
+  margin-left: 0.15rem;
+  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .aiResKeyWord div,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .aiResKeyWord div {
+  width: 98.5%;
+  height: 93%;
+  text-align: center;
+  line-height: 0.67rem;
+  background: linear-gradient(90deg, #faedff 0, #f0eefe 53%, #ebf1ff 100%);
+  border-radius: 0.92rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-49.5%, -50%);
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .aiResKeyWord div p,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .aiResKeyWord div p {
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 0.3rem;
+  font-style: normal;
+  text-transform: none;
+  background: linear-gradient(90deg, #de50ff 0, #8948f5 53%, #3476fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem .aiResKeyWord div p::before,
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem .aiResKeyWord div p::before {
+  content: "";
+  display: inline-block;
+  width: 0.32rem;
+  height: 0.28rem;
+  background: url(../img/ai_build.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: 0.06rem;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel {
+  width: 100%;
+  padding: 0.1rem 0.15rem;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 0.08rem 0.01rem rgba(0, 0, 0, 0.1);
+  font-size: 0.22rem;
+  border-radius: 0.15rem;
+  margin-bottom: 0.3rem;
+  gap: 0.18rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel .coreDetail,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel .coreDetail {
+  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel .coreDetail .coreDetailContainer,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel .coreDetail .coreDetailContainer {
+  position: absolute;
+  width: 7.1rem;
+  z-index: 99;
+  top: 0.52rem;
+  left: -6.12rem;
+  background: #FFFFFF;
+  box-shadow: 0 0.04rem 0.16rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.12rem;
+  color: #333;
+  overflow: hidden;
+  display: none;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel .coreDetail .coreDetailContainer div,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel .coreDetail .coreDetailContainer div {
+  padding: 0.15rem 0.2rem;
+  font-size: 0.24rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel .coreDetail img,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel .coreDetail img {
+  width: 0.3rem;
+  height: 0.3rem;
+  transform: translateY(-0.02rem);
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel label,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel label {
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel label input,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel label input {
+  width: 0.22rem;
+  height: 0.22rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureJournalLevel label span,
+#sclectDocPopOnly .nextStepContent .selectLiteratureJournalLevel label span {
+  font-size: 0.22rem !important;
+}
+#sclectDocPopOnly .selectLiteratureContent .searchTips,
+#sclectDocPopOnly .nextStepContent .searchTips {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.24rem;
+  color: #FD0303;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-top: -0.15rem;
+  margin-bottom: 0.4rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .cnFindLiterature,
+#sclectDocPopOnly .nextStepContent .cnFindLiterature,
+#sclectDocPopOnly .selectLiteratureContent .enFindLiterature,
+#sclectDocPopOnly .nextStepContent .enFindLiterature,
+#sclectDocPopOnly .selectLiteratureContent .contineFindLiterature,
+#sclectDocPopOnly .nextStepContent .contineFindLiterature {
+  width: 4.7rem;
+  height: 0.88rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.92rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.36rem;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 0.88rem;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 auto 0.4rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .cnSelectLiterature,
+#sclectDocPopOnly .nextStepContent .cnSelectLiterature,
+#sclectDocPopOnly .selectLiteratureContent .enSelectLiterature,
+#sclectDocPopOnly .nextStepContent .enSelectLiterature {
+  width: 100%;
+}
+#sclectDocPopOnly .selectLiteratureContent .cnIslitertureResultall,
+#sclectDocPopOnly .nextStepContent .cnIslitertureResultall,
+#sclectDocPopOnly .selectLiteratureContent .enIslitertureResultall,
+#sclectDocPopOnly .nextStepContent .enIslitertureResultall {
+  width: 7.5rem;
+  background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
+  margin-left: -0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .findResTitle,
+#sclectDocPopOnly .nextStepContent .findResTitle {
+  width: 7.1rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 600;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .findResTitle p,
+#sclectDocPopOnly .nextStepContent .findResTitle p {
+  font-size: 0.34rem;
+  color: #333333;
+}
+#sclectDocPopOnly .selectLiteratureContent .findResTitle .findResTotal,
+#sclectDocPopOnly .nextStepContent .findResTitle .findResTotal {
+  font-size: 0.24rem;
+  color: #FF0A0E;
+  margin-top: 0.2rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup,
+#sclectDocPopOnly .nextStepContent .actionGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  width: 7.1rem;
+  color: #333;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft,
+#sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft {
+  display: flex;
+  align-items: center;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft label,
+#sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft label {
+  display: flex;
+  align-items: center;
+  margin-right: 0.2rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft label input,
+#sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft label input {
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.08rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft label .selectContainer,
+#sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft label .selectContainer {
+  width: 1.5rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  border-radius: 0.12rem;
+  border: 0.01rem solid #DDDDDD;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #333333;
+  text-align: left;
+  padding-left: 0.2rem;
+  font-style: normal;
+  text-transform: none;
+  background: url(../../../newimg/ai/model/seceltX.png) no-repeat right 10px center #fff;
+  background-size: 0.22rem 0.12rem;
+  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft label .selectContainer .selectItem,
+#sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft label .selectContainer .selectItem {
+  position: absolute;
+  background: #FFFFFF;
+  box-shadow: 0 0.04rem 0.16rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.12rem;
+  top: 0.75rem;
+  left: 0;
+  width: 100%;
+  text-indent: 0.2rem;
+  color: #333;
+  background-color: #fff;
+  overflow: hidden;
+  display: none;
+  z-index:9999;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupLeft label .selectContainer .selectItem .selectItemActive,
+#sclectDocPopOnly .nextStepContent .actionGroup .actionGroupLeft label .selectContainer .selectItem .selectItemActive {
+  color: #1A0C5C;
+  background: linear-gradient(90deg, rgba(222, 80, 255, 0.2) 0%, rgba(137, 72, 245, 0.2) 53.37%, rgba(52, 118, 254, 0.2) 100%);
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupRight {
+  display: flex;
+  align-items: center;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupRight div {
+  width: 1.6rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.92rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupRight .cnSearchRecords {
+  margin-right: 0.15rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .actionGroup .actionGroupRight .cnBatchAdd {
+  background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList {
+  width: 7.1rem;
+  margin-top: 0.3rem;
+  padding-top: 0.2rem;
+  padding-bottom: .5rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .literatureList .noData {
+  width: 100%;
+  padding-bottom: 1.4rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .noData img {
+  display: block;
+  width: 5rem;
+  height: 3rem;
+  margin: 0 auto;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .noData p {
+  text-align: center;
+  font-size: 0.22rem;
+  color: #666;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading {
+  width: 4rem;
+  height: 1.8rem;
+  margin: 0 auto;
+  background: url(../../../newimg/ai/model/searchimg.png) no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg {
+  position: absolute;
+  top: 0.8rem;
+  left: 50%;
+  width: 0.54rem;
+  height: 0.54rem;
+  transform: translate(-50%, 0);
+  transform-origin: 50% 0.4rem;
+  animation: loaddingCircle 2.5s linear infinite;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg img {
+  width: 100%;
+  height: 100%;
+  background: url(../../../newimg/ai/model/search_2.png) no-repeat center;
+  background-size: 100%;
+  animation: antiRotate 2.5s linear infinite;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading p {
+  width: 100%;
+  position: absolute;
+  bottom: -0.3rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  font-size: 0.22rem;
+  color: #666;
+}
+@keyframes loaddingCircle {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(360deg);
+  }
+}
+@keyframes antiRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem {
+  display: flex;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border-radius: 0.2rem;
+  padding-bottom: 0.2rem;
+  box-shadow: 0 0.01rem 0.08rem 0 rgba(211, 211, 211, 0.2);
+  margin-bottom: 0.2rem;
+  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem input {
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-left: 0.2rem;
+  margin-top: 0.25rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo {
+  margin-top: 0.17rem;
+  margin-left: 0.15rem;
+  width: 100%;
+  padding-right: 0.2rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTitleAndAction {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 0.3rem;
+  color: #333333;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTitleAndAction .listItemTitle {
+  width: 4.5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTitleAndAction .listItemTitleExpand {
+  width: 4.5rem;
+  overflow: visible;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTitleAndAction .listItemAction {
+  width: 1.1rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.24rem;
+  color: #e8f0ff;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
+  border-radius: 0.92rem;
+  margin-left: 0.25rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTitleAndAction .listItemAction::before {
+  content: "";
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.08rem;
+  background: url(../img/addList.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTypeAndYear {
+  display: flex;
+  margin-top: 0.1rem;
+  margin-bottom: 0.2rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTypeAndYear .listItemType {
+  width: 1.08rem;
+  height: 0.3rem;
+  background: rgba(52, 118, 254, 0.1);
+  border-radius: 0.08rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #3476FE;
+  line-height: 0.3rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-right: 0.15rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemTypeAndYear .listItemYear {
+  width: 0.95rem;
+  height: 0.3rem;
+  background: #F9F9F9;
+  border-radius: 0.08rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #666666;
+  line-height: 0.3rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .coreAndLevelTwoTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .coreAndLevelTwoTitle .listItemCore {
+  width: 0.6rem;
+  height: 0.28rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.15rem 0.15rem 0 0.15rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.2rem;
+  color: #FFFFFF;
+  line-height: 0.28rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .coreAndLevelTwoTitle .listItemLevelTwo {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 600;
+  font-size: 0.24rem;
+  color: #666666;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .coreAndLevelTwoTitle .listItemLevelTwo span {
+  max-width: 5.8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .coreAndLevelTwoTitle .listItemLevelTwo .spanCollapse {
+  -webkit-line-clamp: none !important;
+  height: auto !important;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemAuthor,
+#sclectDocPopOnly  .nextStepContent .nextStepContent .listItemAuthor {
+  width: 5.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #999999;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: 0.02rem;
+  margin-bottom: 0.15rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemAuthor::before,
+#sclectDocPopOnly  .nextStepContent .nextStepContent .listItemAuthor::before {
+  content: "";
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.08rem;
+  background: url(../img/author.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.03rem);
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemAbstracts,
+#sclectDocPopOnly  .nextStepContent .nextStepContent .listItemAbstracts
+ {
+    width: 100%;
+    font-family: PingFang SC, PingFang SC;
+    font-weight: 400;
+    font-size: 0.22rem;
+    color: #999999;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    position: relative;
+    display: flex;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemAbstracts p {
+    width: 85%;
+    padding-left: 0.15rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemAbstracts .listItemAbstractsCollapse {
+  	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .literatureInfo .listItemAbstracts::before {
+  content: "";
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(../img/abstracts.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.04rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .abstractsTogg,
+#sclectDocPopOnly  .nextStepContent .abstractsTogg{
+  position: absolute;
+  right: 1.5rem;
+  top: 0.28rem;
+  background: #fff;
+  padding: 0.01rem 0.05rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.2rem;
+  color: #3476FE;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .abstractsTogg::after,
+#sclectDocPopOnly .nextStepContent .abstractsTogg::after{
+  content: "";
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.1rem;
+  background: url(../img/expand.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(-0.02rem);
+  margin-left: 0.1rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureListItem .abstractsClose::after,
+#sclectDocPopOnly .nextStepContent .abstractsClose::after{
+  content: "";
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.1rem;
+  background: url(../img/abstractsClose.png) no-repeat !important;
+  background-size: 100% 100% !important;
+  transform: translateY(-0.02rem);
+  margin-left: 0.1rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .isCoreList,
+#sclectDocPopOnly .nextStepContent .isCoreList{
+  height: 0.3rem;
+  border-radius: 0.08rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #3476FE;
+  line-height: 0.3rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+  display: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .isCoreList li,
+#sclectDocPopOnly .nextStepContent .isCoreList li{
+  background: rgba(52, 118, 254, 0.1);
+  width: 1.2rem;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  text-align: center;
+  margin-right: 0.2rem;
+  border-radius: 0.08rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded,
+#sclectDocPopOnly .nextStepContent .literatureList .literatureAdded{
+	  position: relative;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded::after,
+#sclectDocPopOnly .nextStepContent .literatureList .literatureAdded::after{
+  position: absolute;
+  right: 0;
+  content: "";
+  display: block;
+  width: 0.66rem;
+  height: 0.66rem;
+  background: url(../img/added.png) no-repeat;
+  background-size: 100% 100%;
+}
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .listItemAction,
+#sclectDocPopOnly .nextStepContent .literatureList .literatureAdded .listItemAction{
+  background: #bbbbbb !important;
+  color: #fff !important;
+  display: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteraturePag,
+#sclectDocPopOnly .nextStepContent .selectLiteraturePag{
+  display: flex;
+  width: 100%;
+  margin-left: -0.2rem;
+  padding: 0 0.2rem;
+  height: 2.8rem;
+  background: #f5f7fb;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteraturePag {
+  padding-bottom: 4.2rem;
+  margin-left: 0;
+}
+
+#sclectDocPopOnly  .nextStepContent .selectLiteraturePag {
+  height: 0.8rem;
+  margin-left: 0;
+  width: 100%;
+}
+
+#sclectDocPopOnly .nextStepContent .selectLiteraturePag {
+  padding-top: 0.2rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .selectLiteratureFooter,
+#sclectDocPopOnly .nextStepContent .nextSelectLiteratureFooter{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: #f5f7fb;
+    width: 100%;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteraturePag div, #sclectDocPopOnly .nextStepContent .selectLiteraturePag div {
+  width: 2.2rem;
+  height: 0.72rem;
+  background: #fff;
+  line-height: 0.72rem;
+  text-align: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #666666;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteraturePag div:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.22rem;
+  margin-right: 0.08rem;
+  background: url(../../../newimg/ai/model/prev.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .selectLiteratureContent .selectLiteraturePag div:last-child::after {
+  content: "";
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.22rem;
+  margin-left: 0.08rem;
+  background: url(../../../newimg/ai/model/next.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .selectLiteratureContent .upLoadAndTotalSum, #sclectDocPopOnly .nextStepContent .upLoadAndTotalSum {
+  width: 100%;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.24rem;
+  color: #666666;
+  font-style: normal;
+  text-transform: none;
+  padding-top: 0.35rem;
+}
+#sclectDocPopOnly .selectLiteratureContent .upLoadAndTotalSum .uploadSum, #sclectDocPopOnly .nextStepContent .upLoadAndTotalSum .uploadSum,
+#sclectDocPopOnly .selectLiteratureContent .upLoadAndTotalSum .selectSum, #sclectDocPopOnly .nextStepContent .upLoadAndTotalSum .selectSum,
+#sclectDocPopOnly .selectLiteratureContent .upLoadAndTotalSum .selectLiteratureTotal, #sclectDocPopOnly .nextStepContent .upLoadAndTotalSum .selectLiteratureTotal {
+  color: #FD0303;
+  font-weight: bold;
+}
+#sclectDocPopOnly .selectLiteratureContent .SelectLiteratureSave,
+#sclectDocPopOnly .nextStepContent .SelectLiteratureSave,
+#sclectDocPopOnly .selectLiteratureContent .nextStep,
+#sclectDocPopOnly .nextStepContent .nextStep {
+  width: 100%;
+  align-items: center;
+  padding-bottom: 0.3rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+#sclectDocPopOnly .saveSubmit,
+#sclectDocPopOnly .selectLiteratureContent .nextStep div,
+#sclectDocPopOnly .nextStepContent .nextStep div{
+  width: 6.7rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.92rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.36rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+#sclectDocPopOnly .saveSubmit {
+  width: 2.5rem;
+  margin: 0;
+}
+#sclectDocPopOnly .returnBtn {
+  width: 2.8rem;
+  height: 0.8rem;
+  line-height: 0.75rem;
+  text-align: center;
+  border: 0.02rem solid #3476FE;
+  border-radius: 0.92rem;
+  color: #3476FE;
+  font-size: 0.36rem;
+  font-weight: 400;
+}
+
+#sclectDocPopOnly .literatureDetails {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  background: #3476FE;
+  border-radius: 50%;
+}
+#sclectDocPopOnly .literatureDetails .detailsImg {
+  width: 0.36rem;
+  height: 0.36rem;
+  background: url(../img/details.png) no-repeat;
+  background-size: 100% 100%;
+  margin: 0.17rem auto 0.04rem auto;
+}
+#sclectDocPopOnly .literatureDetails .detailsText {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.18rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemDelete,
+#sclectDocPopOnly .nextStepContent .literatureListItemDelete,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemIsBuildText,
+#sclectDocPopOnly .nextStepContent .literatureListItemIsBuildText,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemBuildOutline,
+#sclectDocPopOnly .nextStepContent .literatureListItemBuildOutline {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.2rem;
+  width: 1.5rem;
+  height: 0.40rem;
+  line-height: 0.48rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.24rem;
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  background: linear-gradient(90deg, #ed7c89 0%, #f8075f 100%);
+  border-radius: 0.92rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sclectDocPopOnly .nextStepContent .literatureListItemDelete,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemDelete {
+  top: 0.52rem;
+}
+
+
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemIsBuildText .isBuildText,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemBuildOutline .isBuildOutline,
+#sclectDocPopOnly .nextStepContent .literatureListItemIsBuildText .isBuildText,
+#sclectDocPopOnly .nextStepContent .literatureListItemBuildOutline .isBuildOutline {
+  position: absolute;
+  width: 0.34rem;
+  height: 0.34rem;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 1.13rem;
+  border-radius: 100%;
+  background: #fff;
+  transition: left 0.3s ease-in-out;
+}
+
+
+#sclectDocPopOnly .nextStepContent .literatureListItemIsBuildText,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemIsBuildText{
+  top: 1.05rem;
+  background: #00e266;
+  justify-content: flex-start;
+  text-indent: 0.1rem;
+}
+#sclectDocPopOnly .nextStepContent .literatureListItemBuildOutline,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemBuildOutline{
+  top: 1.55rem;
+  background: #00e266;
+  justify-content: flex-start;
+  text-indent: 0.1rem;
+}
+#sclectDocPopOnly .nextStepContent .literatureListItemIsBuildFalse,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemIsBuildFalse{
+  background: #e5e5e5;
+  text-indent: 0.42rem;
+}
+#sclectDocPopOnly .nextStepContent .literatureListItemIsBuildFalse .isBuildText,
+#sclectDocPopOnly .nextStepContent .literatureListItemIsBuildFalse .isBuildOutline,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemIsBuildFalse .isBuildOutline,
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemIsBuildFalse .isBuildText {
+  left: 0.04rem;
+}
+
+#sclectDocPopOnly #nextStepSelectPopCn , #nextStepSelectPopEn {
+  padding-bottom: 4.8rem;
+}
+
+
+
+#sclectDocPopOnly .selectLiteratureContent .literatureList .literatureAdded .literatureListItemDelete::before,
+#sclectDocPopOnly .nextStepContent .literatureListItemDelete::before {
+  content: "";
+  display: block;
+  width: 0.26rem;
+  height: 0.26rem;
+  background: url(../img/dellistitem.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: 0.08rem;
+}
+
+#sclectDocPopOnly .selectLiteratureContent .closeSearch, #sclectDocPopOnly .nextStepContent .closeSearch {
+  width: 1.8rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  color: #fff;
+  text-align: left;
+  text-indent: 0.2rem;
+  border-radius: 0.2rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+  margin-left: auto;
+}
+#sclectDocPopOnly .selectLiteratureContent .closeSearch::after, #sclectDocPopOnly .nextStepContent .closeSearch::after {
+  content: "";
+  display: block;
+  width: 0.35rem;
+  height: 0.15rem;
+  background: url(../img/closeSearch.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 50%;
+  right: 0.1rem;
+  transform: translateY(-50%);
+}
+/*# sourceMappingURL=selectLiterature.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#electedSelectedPopUpOnly .selectedPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent {
+  position: relative;
+  background-color: #fff;
+  margin-top: 1.35rem;
+  width: 7.5rem;
+  height: 100%;
+  padding-top: 0.4rem;
+  padding-bottom: 0.3rem;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedPopUpClose {
+  position: absolute;
+  top: 0.16rem;
+  right: 0.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.38rem;
+  background: url(../img/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedTitle {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 700;
+  font-size: 0.4rem;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedTabSwitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.32rem;
+  color: #333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  box-sizing: border-box;
+  margin: 0.3rem auto 0.4rem auto;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedTabSwitch .selectedTabItem {
+  width: 3.55rem;
+  height: 0.72rem;
+  line-height: 0.72rem;
+  border-radius: 0 0.16rem 0.16rem 0;
+  border: 0.02rem solid #CCCCCC;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedTabSwitch .selectedTabItem:nth-child(1) {
+  border-radius: 0.16rem 0 0 0.16rem;
+  border-right: none;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedTabSwitch .selectedActive {
+  color: #fff;
+  border: 0.02rem solid transparent;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-left: #dd50ff 0.02rem solid;
+  border-right: #3476fe 0.02rem solid;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiteratureNum {
+  padding-left: 0.22rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #666666;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiteratureNum .selectSum {
+  color: #3476FE;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature {
+  width: 7.1rem;
+  max-height: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0 auto;
+  border-top: 0.01rem solid #e0e0e0;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0.01rem solid #e0e0e0;
+  border-top: none;
+  font-size: 0.28rem;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table th {
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table th,
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table td {
+  padding: 0.12rem 0.15rem;
+  text-align: center;
+  border: 0.01rem solid #e0e0e0;
+  border-top: none;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table thead {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  border-collapse: separate;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table thead tr th:nth-child(1) {
+  width: 0.9rem;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table thead tr th:nth-child(2) {
+  text-align: left;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table thead tr th:nth-child(3) {
+  width: 0.9rem;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleCell {
+  position: relative;
+  padding: 0.38rem 0.1rem 0.3rem 0.15rem !important;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .cornerMark {
+  position: absolute;
+  top: -0.02rem;
+  left: -0.02rem;
+  color: #fff;
+  width: 0.9rem;
+  height: 0.35rem;
+  line-height: 0.35rem;
+  text-align: left;
+  text-indent: 0.5em;
+  font-size: 0.24rem;
+  background: url(../../../newimg/ai/model/yearbadge.png) no-repeat;
+  background-size: 100% 100%;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #333333;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  position: relative;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText .titleTextContent {
+  width: 4.3rem;
+  height: 0.36rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText .titleTextExpand {
+  height: auto !important;
+  white-space: normal !important;
+  font-weight: bold;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText .abstractText {
+  width: 4.3rem;
+  height: auto;
+  display: none;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText .abstractText .abstractTextCon {
+  width: 4.3rem;
+  height: auto;
+  position: relative;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText .abstractText .abstractTextCon p {
+	font-size: 0.24rem;
+	text-indent: 1.5em;
+	width: 100%;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .titleText .abstractTextCon::before {
+  position: absolute;
+  content: "";
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(../img/abstracts.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.04rem;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .expandBtn {
+  position: absolute;
+  right: 0.16rem;
+  bottom: 0;
+  width: 0.36rem;
+  height: 0.36rem;
+  background: url(../../../newimg/ai/model/tobottom.png) no-repeat;
+  background-size: 100% 100%;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .deleteBtn {
+  width: 0.32rem;
+  height: 0.32rem;
+  margin: 0 auto;
+  background: url(../img/delBtn.png) no-repeat;
+  background-size: 100% 100%;
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .tmpLiterature .tmpLiteratureTable table tbody .deleteBtnExpand {
+  transform: rotate(180deg);
+}
+#electedSelectedPopUpOnly .selectedPopUp .selectedContent .selectedPopUpSave {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0.4rem;
+  width: 6.7rem;
+  height: 0.88rem;
+  background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
+  border-radius: 0.92rem;
+  line-height: 0.88rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.36rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+/*# sourceMappingURL=selectedPopUp.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+#sclectDocPopOnly .searchRecordsPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000000;
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(100%);
+  transition: 0.3s ease-in-out;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent {
+  position: relative;
+  background-color: #fff;
+  margin-top: 1.35rem;
+  width: 7.5rem;
+  height: 100%;
+  padding-top: 0.4rem;
+  padding-bottom: 0.3rem;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpClose {
+  position: absolute;
+  top: 0.16rem;
+  right: 0.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.38rem;
+  background: url(../img/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpTitle {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 700;
+  font-size: 0.4rem;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsDesc {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 700;
+  font-size: 0.24rem;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 0.1rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.32rem;
+  color: #333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  box-sizing: border-box;
+  margin: 0.3rem auto 0.4rem auto;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabItem {
+  width: 3.55rem;
+  height: 0.72rem;
+  line-height: 0.72rem;
+  border-radius: 0 0.16rem 0.16rem 0;
+  border: 0.02rem solid #CCCCCC;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabItem:nth-child(1) {
+  border-radius: 0.16rem 0 0 0.16rem;
+  border-right: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsTab .searchRecordsTabActive {
+  color: #fff;
+  border: 0.02rem solid transparent;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-left: #dd50ff 0.02rem solid;
+  border-right: #3476fe 0.02rem solid;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList {
+  width: 100%;
+  height: 100%;
+  margin-top: 0.3rem;
+  padding-top: 0.2rem;
+  padding-bottom: 1.3rem;
+  max-height: 61vh;
+  background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem,
+#sclectDocPopOnly .nextStepContent .searchListItem{
+  width: 7.1rem;
+  display: flex;
+  align-items: flex-start;
+  background: #FFFFFF;
+  border-radius: 0.2rem;
+  padding-bottom: 0.2rem;
+  box-shadow: 0 0.01rem 0.08rem 0 rgba(211, 211, 211, 0.2);
+  margin: 0 auto;
+  margin-bottom: 0.2rem;
+  position: relative;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo{
+  margin-top: 0.17rem;
+  margin-left: 0.15rem;
+  width: 100%;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction{
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 0.3rem;
+  color: #333333;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemTitle,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemTitle{
+  width: 4.5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemTitleExpand,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemTitleExpand{
+  width: 4.5rem;
+  overflow: visible;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemAction,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemAction{
+  width: 1.1rem;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.24rem;
+  color: #e8f0ff;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
+  border-radius: 0.92rem;
+  margin-left: 0.25rem;
+  margin-right: 0.2rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTitleAndAction .listItemAction::before,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTitleAndAction .listItemAction::before{
+  content: "";
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.24rem;
+  margin-right: 0.08rem;
+  background: url(../img/addList.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear ,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTypeAndYear{
+  display: flex;
+  margin-top: 0.1rem;
+  margin-bottom: 0.2rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear .listItemType,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTypeAndYear .listItemType{
+  width: 1.08rem;
+  height: 0.3rem;
+  background: rgba(52, 118, 254, 0.1);
+  border-radius: 0.08rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #3476FE;
+  line-height: 0.3rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-right: 0.15rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemTypeAndYear .listItemYear ,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemTypeAndYear .listItemYear{
+  width: 0.95rem;
+  height: 0.3rem;
+  background: #F9F9F9;
+  border-radius: 0.08rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #666666;
+  line-height: 0.3rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemCore,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemCore{
+  width: 0.6rem;
+  height: 0.28rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.15rem 0.15rem 0 0.15rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.2rem;
+  color: #FFFFFF;
+  line-height: 0.28rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .isCoreList ,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .isCoreList{
+  height: 0.3rem;
+  border-radius: 0.08rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #3476FE;
+  line-height: 0.3rem;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.15rem;
+  display: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .isCoreList li,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .isCoreList li{
+  background: rgba(52, 118, 254, 0.1);
+  width: 1.2rem;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  text-align: center;
+  margin-right: 0.2rem;
+  border-radius: 0.08rem;
+}
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo{
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 600;
+  font-size: 0.24rem;
+  color: #666666;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo span ,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo span{
+  max-width: 5.8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo.coreAndLevelTwoTitle .listItemLevelTwo .spanCollapse,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .coreAndLevelTwoTitle .listItemLevelTwo .spanCollapse{
+  -webkit-line-clamp: none !important;
+  height: auto !important;
+}
+
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAuthor,
+#sclectDocPopOnly .nextStepContent .listItemAuthor{
+  width: 5.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.22rem;
+  color: #999999;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: 0.02rem;
+  margin-bottom: 0.15rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAuthor::before,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAuthor::before{
+  content: "";
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(../img/abstracts.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.04rem;
+}
+
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts{
+    width: 100%;
+    font-family: PingFang SC, PingFang SC;
+    font-weight: 400;
+    font-size: 0.22rem;
+    color: #999999;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+    position: relative;
+    display: flex;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts p,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts p{
+    width: 85%;
+    padding-left: 0.15rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo  .listItemAbstracts .listItemAbstractsCollapse,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts .listItemAbstractsCollapse{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchInfo .listItemAbstracts::before,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .listItemAbstracts::before{
+  content: "";
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(../img/abstracts.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 0.03rem;
+}
+
+
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchAbsTogg,
+#sclectDocPopOnly .nextStepContent .searchAbsTogg{
+  position: absolute;
+  right: 1.7rem;
+  top: 0.25rem;
+  background: #fff;
+  padding: 0.01rem 0;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.2rem;
+  color: #3476FE;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .searchAbsTogg::after ,
+#sclectDocPopOnly .nextStepContent .searchAbsTogg::after{
+  content: "";
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.1rem;
+  background: url(../img/expand.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(-0.02rem);
+}
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .abstractsTogg ,
+#sclectDocPopOnly .nextStepContent .abstractsTogg{
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+  background: #fff;
+  padding: 0.01rem 0;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.2rem;
+  color: #3476FE;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+
+#sclectDocPopOnly .nextStepContent .abstractsTogg {
+  top: 0.22rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .abstractsTogg::after,
+#sclectDocPopOnly .nextStepContent .abstractsTogg::after{
+  content: "";
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.1rem;
+  background: url(../img/expand.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(-0.02rem);
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListItem .abstractsClose::after,
+#sclectDocPopOnly .nextStepContent .searchListItem .searchInfo .abstractsClose::after{
+  content: "";
+  display: inline-block;
+  width: 0.18rem;
+  height: 0.1rem;
+  background: url(../img/abstractsClose.png) no-repeat !important;
+  background-size: 100% 100% !important;
+  transform: translateY(-0.02rem);
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded::after,
+#sclectDocPopOnly .nextStepContent .searchListAdded::after{
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: "";
+  display: block;
+  width: 0.66rem;
+  height: 0.66rem;
+  background: url(../img/added.png) no-repeat;
+  background-size: 100% 100%;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded .listItemAction,
+#sclectDocPopOnly .nextStepContent .listItemAction{
+  background: #bbbbbb !important;
+  color: #fff !important;
+  display: none;
+}
+
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter {
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #f5f7fb;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding-bottom: 0.4rem;
+  padding-top: 0.3rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div {
+  width: 2.2rem;
+  height: 0.72rem;
+  background: #fff;
+  line-height: 0.72rem;
+  text-align: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #666666;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.22rem;
+  margin-right: 0.08rem;
+  background: url(../../../newimg/ai/model/prev.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsPag div:last-child::after {
+  content: "";
+  display: inline-block;
+  width: 0.12rem;
+  height: 0.22rem;
+  margin-left: 0.08rem;
+  background: url(../../../newimg/ai/model/next.png) no-repeat;
+  background-size: 100% 100%;
+  transform: translateY(0.02rem);
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer {
+  width: 100%;
+  height: 0.72rem;
+  background: #f5f7fb;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  padding-bottom: 0.3rem;
+  text-align: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.24rem;
+  color: #666666;
+  font-style: normal;
+  text-transform: none;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .uploadSum,
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .selectSum,
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsTotalContainer .searchRecordsTotal {
+  color: #FD0303;
+  font-weight: bold;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsSave {
+  width: 100%;
+  height: 1.72rem;
+  background: #f5f7fb;
+  padding-top: 0.25rem;
+}
+#sclectDocPopOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter .searchRecordsSave div {
+  width: 6.7rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+  border-radius: 0.92rem;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 0.36rem;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=searchRecord.css.map */
+
+
+
+
+
+
+/*** yixuanwenxiangaibiantanchuang******************/
+#selectedChangePopUpOnly {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999991;
+  display: none;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent {
+  position: relative;
+  width: 99%;
+  padding: 0.9rem 0.25rem 0.35rem 0.25rem;
+  color: #333;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  margin: 40% auto 0 auto;
+  box-sizing: border-box;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent .selectedChangePopUpClose {
+  position: absolute;
+  top: 0.16rem;
+  right: 0.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.38rem;
+  background: url(../img/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent p {
+  font-size: 0.24rem;
+  line-height: 0.4rem;
+  text-align: center;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent p span {
+  color: #d55252;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent .selectedChangeBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent .selectedChangeBtn div {
+  height: 0.6rem;
+  border-radius: 0.4rem;
+  line-height: 0.6rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.24rem;
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent .selectedChangeBtn .btnCancel {
+  width: 2.8rem;
+  background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
+}
+#selectedChangePopUpOnly .selectedChangePopUp .selectedChangePopUpContent .selectedChangeBtn .btnSave {
+  width: 1.4rem;
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+}
+/*# sourceMappingURL=selectedChangePopUp.css.map */
+
+
+
+
+
+
+
+
+#sclectDocPopOnly .changeOneTips {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999991;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent {
+  position: relative;
+  width: 99%;
+  padding: 0.9rem 0.25rem 0.35rem 0.25rem;
+  color: #333;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  margin: 40% auto 0 auto;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsClose {
+  position: absolute;
+  top: 0.16rem;
+  right: 0.2rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.38rem;
+  background: url(../img/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent p {
+  font-size: 0.24rem;
+  line-height: 0.4rem;
+  text-align: center;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn div {
+  width: 1.4rem;
+  height: 0.6rem;
+  border-radius: 0.4rem;
+  line-height: 0.6rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.24rem;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn .changeOneTipsBtnCancel {
+  background: linear-gradient(90deg, #34B9FE 0%, #3476FE 100%);
+  margin-right: 0.5rem;
+}
+#sclectDocPopOnly .changeOneTips .changeOneTipsContent .changeOneTipsBtn .changeOneTipsBtnSave {
+  background: linear-gradient(90deg, #DE50FF 0%, #8948F5 53.37%, #3476FE 100%);
+}
+/*# sourceMappingURL=changeOne.css.map */
+
+
+
+#deleteSelectedPopUpOnly .deleteSelectedPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999991;
+}
+#deleteSelectedPopUpOnly .deleteSelectedPopUp .deleteSelectedPopUpContent {
+  position: relative;
+  width: 96%;
+  padding: 0.5rem 0.25rem 0.35rem 0.25rem;
+  color: #333;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  margin: 40% auto 0 auto;
+  text-align: center;
+}
+#deleteSelectedPopUpOnly .deleteSelectedPopUp .deleteSelectedPopUpContent .deleteSelectedPopUpBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+#deleteSelectedPopUpOnly .deleteSelectedPopUp .deleteSelectedPopUpContent .deleteSelectedPopUpBtn div {
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.1rem;
+  cursor: pointer;
+  font-size: 0.24rem;
+}
+#deleteSelectedPopUpOnly .deleteSelectedPopUp .deleteSelectedPopUpContent .deleteSelectedPopUpBtn .deleteSelectedPopUpBtnNo {
+  background-color: #e5e5e5;
+  color: #333;
+}
+#deleteSelectedPopUpOnly .deleteSelectedPopUp .deleteSelectedPopUpContent .deleteSelectedPopUpBtn .deleteSelectedPopUpBtnYes {
+  background: linear-gradient(90deg, #de50ff 0, #8948f5 53%, #3476fe 100%) !important;
+  color: #fff;
+}
+/*# sourceMappingURL=deleteSelectedPopUp.css.map */

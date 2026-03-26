@@ -252,7 +252,7 @@ function referenceOptions() {
 
         // 点击空白区域隐藏气泡弹窗
         $('body').click((e) => {
-            if (!$(e.target).is('.text_enhancetopsicon') && !$(e.target).is('.current_introduction') && !$(e.target).is('.current_introduction p')) {
+            if (!$(e.target).is('.text_enhancetopsicon')) {
                 $('.current_introduction').hide();
             }
         });

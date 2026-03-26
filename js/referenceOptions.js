@@ -161,6 +161,7 @@ function referenceOptions() {
         $('input[name="referenceOptions"][dataRefer="self"]').prop("checked", true);
         $('.OptionsEdit').show()
         this.params.defaultRefer = "self";
+        this.params.upSelectType = "self";
     }
     this.AiSelectCallback = (cnSearchParam, enSearchParam) => {
         var cnyeartext = "近" + cnSearchParam.duration + "年";
@@ -200,6 +201,11 @@ function referenceOptions() {
     // 绑定事件
     this.refBindEvent = () => {
         $('input[name="referenceOptions"]').on('click', (e) => {
+            if (this.params.isDisabled) {
+                $('input[name="referenceOptions"][dataRefer="' + this.params.upSelectType + '"]', this.params.refContainer).prop("checked", true)
+                this.disabledFunction($(e.target));
+                return;
+            }
             let dr = $(e.target).attr('dataRefer');
             if (dr == 'self') {
                 e.stopPropagation();
@@ -219,6 +225,10 @@ function referenceOptions() {
 
 
         $('body').on('click', '.OptionsEdit', (e) => {
+            if (this.params.isDisabled) {
+                this.disabledFunction($(e.target));
+                return;
+            }
             if (this.params.defaultRefer === 'ai') {
                 this.params.aiAssistChoose.openAiAssPopup();
                 this.params.aiAssistChoose.params.callback = this.AiSelectCallback;

@@ -8,6 +8,7 @@
   transition: top 0.8s ease-in-out;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 999999;
+  font-size: 0.28rem;
 }
 #sclectDocPopOnly .selectLiteratureContent, #sclectDocPopOnly .nextStepContent {
      background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
@@ -157,15 +158,6 @@
 }
 #sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input {
   margin-right: 0.08rem;
-}
-
-#sclectDocPopOnly input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent input[type='checkbox']:checked {
-    width: 0.26rem;
-    height: 0.26rem;
-    background: url(../img/checkbox.png) no-repeat;
-    background-size: contain;
-    border-radius: 0;
-    border: none;
 }
 
 #sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input[type='checkbox'], #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input[type='checkbox'] {
@@ -572,6 +564,7 @@
   background: url(../../../newimg/ai/model/searchimg.png) no-repeat;
   background-size: 100% 100%;
   margin-bottom: 0.4rem;
+  padding-bottom: 3rem;
   position: relative;
 }
 #sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg {
@@ -1538,7 +1531,7 @@
   margin-top: 0.3rem;
   padding-top: 0.2rem;
   padding-bottom: 1.3rem;
-  max-height: 61vh;
+  max-height: 62vh;
   background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -2150,3 +2143,14 @@
   color: #fff;
 }
 /*# sourceMappingURL=deleteSelectedPopUp.css.map */
+
+
+/* 多选框选中值 */
+#sclectDocPopOnly input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent input[type='checkbox']:checked {
+  width: 0.26rem !important;
+  height: 0.26rem !important;
+  background: url(../img/checkbox.png) no-repeat !important;
+  background-size: contain !important;
+  border-radius: 0 !important;
+  border: none !important;
+}

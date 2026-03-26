@@ -83,12 +83,14 @@ function referenceOptions() {
     // 上传自有参考文献回调
     this.ckwxUploadCallback = (fileList) => {
         this.params.hasFile = 0;
+        $('.uploadReferenceDesc').hide();
         if (typeof this.params.ckwxUploadPop.param.savedFileList != "undefined" && this.params.ckwxUploadPop.param.savedFileList && this.params.ckwxUploadPop.param.savedFileList.length > 0) {
             this.params.hasFile = 1;
             this.params.isSelectedFile = 1;
-            $('.uploadReferenceDesc').text(`已上传${this.params.ckwxUploadPop.param.savedFileList.length}篇`);
+            $('.uploadReferenceDesc').show().text(`已上传${this.params.ckwxUploadPop.param.savedFileList.length}篇文献`);
 
         }
+
         this.modelChanged();
     }
 
@@ -306,7 +308,7 @@ function referenceOptions() {
                         </div>
                         <div class="referenceOptionsDesc">
                             <div class="OptionsDescText">
-                                中文不限年份;不限期刊;15篇 |  外文不限年份;不限期刊;5篇
+                                中文不限年份;不限期刊;10篇 |  外文不限年份;不限期刊;5篇
                             </div>
                             <div class="OptionsEdit">
                                 修改

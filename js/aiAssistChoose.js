@@ -161,15 +161,6 @@ function aiAssistChoose () {
             return;
         }
 
-        if(this.params.cn_search_param.cn_doc_num==null||this.params.cn_search_param.cn_doc_num==""){
-            tip("请填写中文参考文献数");
-            return;
-        }
-        if(this.params.en_search_param.en_doc_num==null||this.params.en_search_param.en_doc_num==""){
-            tip("请填写英文参考文献数");
-            return;
-        }
-
         if((this.params.cn_search_param.cn_doc_num + this.params.en_search_param.en_doc_num)>100){
             tip("文献总数不得超过100！");
             return;
@@ -270,7 +261,7 @@ function aiAssistChoose () {
         let originalVal = $(e.target).val().trim();
 
         let val = originalVal.replace(/\D/g, '');
-        val = val.replace(/^0+/, '') || '1';
+        val = val.replace(/^0+/, '') || '0';
 
         if (val.length >= 3) {
             val = val.slice(0, 3);

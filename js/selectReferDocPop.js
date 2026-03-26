@@ -242,10 +242,8 @@ function selectReferDocPop(){
     // 根据中文文献列表展示或隐藏中文模块
     this.cnSearchInit=function(isshow){
     	isshow= typeof isshow=='undefined'?true:isshow;
-        // 上部分
-        if( isshow&&((this.param.tempCnDocList==null||this.param.tempCnDocList.length==0)||this.param.isCnSearch)){
-        	 //<!-- 中文上部分 -->
-            var cnSearchParam=` <div class="cnSection">
+        // 检索HTML结构
+        var cnSearchParam=` <div class="cnSection">
 			                <div class="selectCnAndEnItem">
 			                    <h5>年份：</h5>
 			                    <label>
@@ -371,13 +369,21 @@ function selectReferDocPop(){
 			                    </label>
 			                </div>
 			                <div class="cnFindLiterature"> 查找文献 </div></div>`;
-            //隐藏下部分文献列表
-             $(".cnSelectLiterature").html(cnSearchParam)
-        }else {
-        	 $(".cnSelectLiterature").html(`<div class="contineFindLiterature">继续查找文献 </div>`)
+        // 上部分
+        const showSearchCondition = isshow && (
+            (this.param.tempCnDocList == null || this.param.tempCnDocList.length === 0) || this.param.isCnSearch);
+
+        const showSearchResult = isshow &&
+            this.param.tempCnDocList != null &&
+            this.param.tempCnDocList.length > 0 &&
+            this.param.cnDocList != null &&
+            this.param.cnDocList.length === 0;
+
+        if (showSearchCondition || showSearchResult) {
+            $('.cnSelectLiterature').html(cnSearchParam);
+        } else {
+            $(".cnSelectLiterature").html(`<div class="contineFindLiterature">继续查找文献 </div>`);
         }
-
-
     }
     this.backDisplaySearch=function(){
     	  let search_params=this.param.currentCnSearch;
@@ -407,7 +413,7 @@ function selectReferDocPop(){
 	   	  if(search_keyword!=null&& search_keyword!=""){
 	   		  this.param.keyword.createTag(search_keyword); 
 	   	  }else{
-         	  // this.param.keyword.generateKeywords(this.param.title,this.param.language);
+         	  this.param.keyword.generateKeywords(this.param.title,this.param.language);
 	   	  }
 	   	  
     }
@@ -709,11 +715,8 @@ function selectReferDocPop(){
    
     this.enSearchInit=function(isshow){
     	isshow= typeof isshow=='undefined'?true:isshow;
-        // 上部分
-        if( isshow&&((this.param.tempEnDocList==null||this.param.tempEnDocList.length==0)||this.param.isEnSearch)){
-            // 显示检索检索条件
-            //隐藏下部分文献列表
-            var enSearchParam=`<div class="selectCnAndEn enSection">
+        // 检索文献的HTML结构
+        var enSearchParam=`<div class="selectCnAndEn enSection">
 			                   <div class="selectCnAndEnItem">
 			                    <h5>年份：</h5>
 			                    <label>
@@ -830,15 +833,23 @@ function selectReferDocPop(){
 			                    </label>
 			                </div>
 			                <div class="enFindLiterature">查找文献 </div></div>`;
-            //隐藏下部分文献列表
-            $('.enSelectLiterature').html(enSearchParam)
-         
-          
-        }else {
-        	$(".enSelectLiterature").html(`<div class="contineFindLiterature">继续查找文献 </div>`)
+        // 上部分
+        const showSearchCondition = isshow && (
+            (this.param.tempEnDocList == null || this.param.tempEnDocList.length === 0) ||
+            this.param.isEnSearch
+        );
+
+        const showSearchResult = isshow &&
+            this.param.tempEnDocList != null &&
+            this.param.tempEnDocList.length > 0 &&
+            this.param.enDocList != null &&
+            this.param.enDocList.length === 0;
+
+        if (showSearchCondition || showSearchResult) {
+            $('.enSelectLiterature').html(enSearchParam);
+        } else {
+            $(".enSelectLiterature").html(`<div class="contineFindLiterature">继续查找文献 </div>`);
         }
-
-
     }
     
     // 保存
@@ -865,11 +876,14 @@ function selectReferDocPop(){
        if(typeof this.param.callback!="undefined"&&this.param.callback){
            this.param.callback();
        }
+
+        $('#selectKw').empty();
+       this.param.currentCnSearch.search_keywords = "";
+       this.param.currentEnSearch.search_keywords = "";
+
        $("body,html").css('overflow','scroll');
        $('.'+this.param.popClass).remove();
 
-       console.log(this.param.cnDocList)
-       console.log(this.param.enDocList)
     }
 
     // 显示弹窗
@@ -905,7 +919,7 @@ function selectReferDocPop(){
         this.renderReferDocList();
      
         // 生成中关键词
-        this.param.keyword.generateKeywords(title,this.param.language);
+       // this.param.keyword.generateKeywords(title,this.param.language);
         $('.'+this.param.popClass).show();
     }
     this.delItem=(id)=>{
@@ -985,6 +999,12 @@ function selectReferDocPop(){
            this.param.isEnCallBackList=true;
            this.param.isCnSearch=false;
            this.param.isEnSearch=false;
+
+          $('#selectKw').empty();
+
+          this.param.currentCnSearch.search_keywords = "";
+          this.param.currentEnSearch.search_keywords = "";
+
     	  $('.'+this.param.popClass).remove();
          if(typeof this.param.concelCallback!="undefined"&&this.param.concelCallback){
             this.param.concelCallback();
@@ -1052,7 +1072,7 @@ function selectReferDocPop(){
     }
     // 查找文献方法
     this.searchReferDocList=function(searchparam){
-        if(searchparam.search_keywords=="undefined"||searchparam.search_keywords==null||searchparam.search_keywords==""){
+        /*if(searchparam.search_keywords=="undefined"||searchparam.search_keywords==null||searchparam.search_keywords==""){
             this.generateKeywords(this.param.title,this.param.language)
             return;
         }
@@ -1061,10 +1081,10 @@ function selectReferDocPop(){
         if(!this.checkInput()){
             return;
         }
-        search_p.journal_base=searchparam.journal_base.join(";");
+        search_p.journal_base=searchparam.journal_base.join(";");*/
         $(".literatureList").html("");
         this.loadingHtml(".literatureList");
-        // 获取检索条件
+        /*// 获取检索条件
         var resultList = [];
         var item = {
             async: false,
@@ -1077,7 +1097,349 @@ function selectReferDocPop(){
             if (sta == 1 && typeof data.data != "undefined" && data.data) {
                 resultList = data.data;
             }
-        })
+        })*/
+        resultList = [
+            {
+                "journalName": "眼科学报",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "王东妮",
+                    "东野枚枚",
+                    "张栩琳",
+                    "杨子英(综述)",
+                    "林浩添(审校)"
+                ],
+                "id": "0201288793577",
+                "abstract": "近年来,使用人工智能(artificial intelligence,AI)技术对临床大数据及图像进行分析,对疾病做出智能诊断、预测并提出诊疗决策,AI正逐步成为辅助临床及科研的先进技术。生物样本库作为收集临床信息和样本供科研使用的平台,是临床与科研的桥梁,也是临床信息与科研数据的集成平台。影响生物样本库使用效率及合理共享的因素有信息化建设水平不均衡、获取的临床及检验信息不完全、各库之间信息不对称等。本文对AI和区块链技术在生物样本库建设中的具体应用场景进行探讨,展望大数据时代智能生物样本库信息化建设的核心方向。",
+                "title": "人工智能和区块链技术在生物样本库信息化建设的应用展望",
+                "type": 1
+            },
+            {
+                "journalName": "中国周刊：英文版",
+                "journalBase": [],
+                "year": 2020,
+                "author": [
+                    "王亮"
+                ],
+                "id": "0201280575059",
+                "abstract": "人工智能已经普遍用于工业自动化控制 , 而且得到相当不错的反应 , 特别是电气自动化技术。将人工智能这一新型技术应用于电气自动化控制中 , 有利于电气自动控制技术的更新 , 增强其控制能力与产品的先进性 , 使其朝着更加科学化的方向发展。本篇文章首先对人工智能技术的基本含义进行概述，从提供控制能力、简化应用方法、保持高度一致三方面入手，对人工智能技术运用的重要性进行解析，并以此为依据，提出人工智能技术在电气自动化控制中的应用思路。",
+                "title": "电气自动化控制中人工智能技术的应用探析",
+                "type": 1
+            },
+            {
+                "journalName": "中国周刊：英文版",
+                "journalBase": [],
+                "year": 2020,
+                "author": [
+                    "王忠全"
+                ],
+                "id": "0201280575918",
+                "abstract": "随着现代科学信息技术的不断进步 , 人工智能技术受到了越来越广泛的关注 , 给现代人们的日常生产以及生活工作带来了极大的方便 , 并被广泛应用到各个领域各个新的行业中。习近平总书记在中央政治局第九集体学习会议上强调,人工智能是新一轮科技革命和产业转型的重要动力。加快新一代人工智能的发展对于我国能否抓住新一轮的科学技术革命以及产业转型的战略性机遇至关重要。国务院和工业和信息化部也发布了人工智能发展计划和发展计划。这表明我国非常重视人工智能的发展。我们称之为第四次工业革命。目前正在研究的两个大型项目是海床观测网络和深部煤炭产品。我们希望通过已经发布海底数据将人员安置在测试地点,因为当前的设备无法完成科学家需要完成的任务,但是我们的智能能源探测机器人可以完成。",
+                "title": "人工智能技术在海洋新能源装备中的应用",
+                "type": 1
+            },
+            {
+                "journalName": "中国周刊：英文版",
+                "journalBase": [],
+                "year": 2020,
+                "author": [
+                    "严静"
+                ],
+                "id": "0201281471458",
+                "abstract": "在我国目前诉讼改革的目标以及庭审的实质化政策的改革背景下,政府大数据的支持以及资本市场的不断投入,使得人工智能技术和司法领域的融合已经成为了未来必然的发展趋势和方向。目前在进行刑事裁判时,裁判的辅助模式已经在司法系统进行了建设,并且得到了推行,法定的统一证据标准也被放入到了公检法的数据化系统中。随着科学技术的不断发展,我们也应该抓住这次发展的机遇,以更加积极的态度迎接人工智能和刑事裁判之间的有效融合,同时要以更加严谨和认真的态度认识到人工智能和法律的有效融合,在逻辑演绎以及价值判断,还有中立面这三个层次应用过程中存在的问题。",
+                "title": "人工智能技术在刑事裁判中的应用研究",
+                "type": 1
+            },
+            {
+                "journalName": "工程技术与管理(英文)",
+                "journalBase": [],
+                "year": 2019,
+                "author": [
+                    "朱江"
+                ],
+                "id": "0201276587197",
+                "abstract": "进入21世纪以来,社会上出现了越来越多的新型技术,比如大数据、智能化、网络化等,而在人工智能技术的发展上,我国也将其应用到电气自动化当中[1]。人工智能技术的应用,毋庸置疑汇集了大数据、网络化以及智能化为一体,其带来的效应自然是值得认可的。本文对人工智能技术在电气自动化中的应用进行分析。",
+                "title": "人工智能技术在电气自动化中的应用",
+                "type": 1
+            },
+            {
+                "journalName": "中国航空学报：英文版",
+                "journalBase": [
+                    "3"
+                ],
+                "year": 2001,
+                "author": [
+                    "吴振锋",
+                    "左洪福",
+                    "郭琳"
+                ],
+                "id": "0201219822026",
+                "abstract": "基于颗粒显微形态学分析理论，建立了一套磨损微粒显微特征描述体系。首先应用这套特征参数描述体系，提取磨损微粒形态中蕴涵的特征信息，然后综合使用自动聚类、人工神经网络和其他的人工智能分析方法进行磨损微粒的综合分析与识别。本项技术已经在航空发动机磨损故障诊断中得到了实际应用。",
+                "title": "基于人工智能技术的磨粒显微形态学分析(英文)",
+                "type": 1
+            },
+            {
+                "journalName": "工程（英文）",
+                "journalBase": [],
+                "year": 2020,
+                "author": [
+                    "刘光迪",
+                    "李雨辰",
+                    "张伟",
+                    "章乐"
+                ],
+                "id": "0201280302578",
+                "abstract": "为了研究精神疾病的病因和发病机制,各国开展了大量脑研究计划.尽管精神疾病是脑科学研究的重要部分,但精神疾病的诊断仍然依靠医生的主观经验,而非疾病的病理生理学指标.因此,为了开发有效的治疗方式和干预措施,我们迫切需要对重大精神疾病的病因和发病机制有一个清晰的认识.当前,人工智能(AI)技术在精神疾病的应用研究方面发展迅速,但缺少对其进行系统化的总结和展望.因此,本研究简要回顾了用于研究精神疾病的三种主要观测技术,即磁共振成像(MRI)、脑电图(EEG)和基于体势学的诊断(与模式识别相关的AI算法)技术.最后,我们讨论了AI应用面临的挑战、机遇和未来的发展方向.",
+                "title": "人工智能算法在精神疾病中的应用简述",
+                "type": 1
+            },
+            {
+                "journalName": "中国周刊：英文版",
+                "journalBase": [],
+                "year": 2020,
+                "author": [
+                    "谢明文"
+                ],
+                "id": "0201280574858",
+                "abstract": "本文围绕着广电媒体创新发展展开讨论，以人工智能为背景，分析了媒体创新发展运用这种高端技术的路径，并且提供了广电媒体和人工智能结合的策略，希望对广电媒体领域的改革具有启发性。",
+                "title": "谈人工智能热潮下广电媒体创新发展策略及路径",
+                "type": 1
+            },
+            {
+                "journalName": "中国国际财经（中英文）",
+                "journalBase": [],
+                "year": 2017,
+                "author": [
+                    "陈群芳"
+                ],
+                "id": "0201264992940",
+                "abstract": "在人工智能技术不断发展的形势下,其应用范围在逐渐扩展,其中便包括了会计行业,该技术的应用在提高会计业务办理效率和质量的同时,也对会计行业产生了一定冲击。本文则分析了人工智能对会计行业的挑战,以及会计人员应对挑战的策略,供会计从业人员参考。",
+                "title": "人工智能的发展对会计行业的挑战",
+                "type": 1
+            },
+            {
+                "journalName": "中国国际财经(英文)",
+                "journalBase": [],
+                "year": 2018,
+                "author": [
+                    "张琪"
+                ],
+                "id": "0201264764051",
+                "abstract": "人工智能应用大数据问题为导向，重点研究面向医疗行业的知识库人工智能分析关键技术，激活行业沉淀大数据资产的利用价值。研究大数据汇集、清洗、语义分析与弹性可扩展计算等共性问题，通过人工智能驱动经营、自反馈决策优化以及个性化服务，推动医疗行业融合及升级转型。",
+                "title": "人工智能在医疗行业创新应用的商业模式研究",
+                "type": 1
+            },
+            {
+                "journalName": "中国国际财经(英文)",
+                "journalBase": [],
+                "year": 2017,
+                "author": [
+                    "陈转萍"
+                ],
+                "id": "0201264993831",
+                "abstract": "随着人工智能在会计领域的发展，会计全程自动化处理、审计智能化和会计服务共享化正不断完善，会计信息系统在一定程度上取代了大量比较规范的和基础的会计工作，这就就需要会计从业人员从比较基础性的、重复性的会计核算工作中解放出来，从而转向更有职业价值的判断性的会计管理工作。因此，本文对人工智能在企业财务审计中的应用进行深入分析，最终对人工智能对财务人员的启示进行探讨。",
+                "title": "人工智能时代企业财务审计应用分析",
+                "type": 1
+            },
+            {
+                "journalName": "计算机应用：英文版",
+                "journalBase": [],
+                "year": 2005,
+                "author": [
+                    "无"
+                ],
+                "id": "0201261903144",
+                "abstract": "Intelligent process planning SYstem for optimal CNC programming - a step towards complete automation of CNC programming，Let's see what happen if we integrate AI planning with workflow management system，MAS collaboration and machine learning method for robot soccer，Prediction of internal surface roughness in drilling using three feedforward neural networks- a comparison……",
+                "title": "人工智能",
+                "type": 1
+            },
+            {
+                "journalName": "计算机应用：英文版",
+                "journalBase": [],
+                "year": 2005,
+                "author": [
+                    "无"
+                ],
+                "id": "0201261905001",
+                "abstract": "A Hybrid Approach for Arabic speech recognition；A Robust Real Time Position and Force (Hybrid) Control of a Robot Manipulator in Presence of Uncertainties；A study of bank loans risk early warning based on a hybrid system of ANN and ES；A synthesis of immune system model wit Darwinian hereditary, neural network；AVOIDING THE USE OF SIMILARITY SCORE IN A CASE-BASED REASONING SYSTEM FOR CRIM1NALRECORDS SEARCHING SYSTEM；Design and Implementation of a Soccer Robot with Modularized Control Circuits；Development of Evolutionary Models for Long-Term Load Forecasting of Power Plant Systems。",
+                "title": "人工智能",
+                "type": 1
+            },
+            {
+                "journalName": "中国有色金属学报（英文版）",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "喻智",
+                    "史秀志",
+                    "陈新",
+                    "周健",
+                    "齐冲冲",
+                    "陈秋松",
+                    "饶帝军"
+                ],
+                "id": "0201288490348",
+                "abstract": "为降低纤维尾砂胶结充填材料单轴压缩强度数据的获取难度,综合分析常规充填材料参数与纤维参数对其单轴压缩性能的影响,结合元启发式算法(樽海鞘算法,SSA)与极限学习机技术(ELM),提出一种新型人工智能模型(SSA-ELM).为检验模型可靠性,开展720组不同灰砂质量比、固体质量浓度、纤维含量、纤维长度和养护时间的纤维尾砂胶结充填材料单轴抗压实验以建立充填材料强度性能数据库.研究结果表明,训练好的SSA-ELM模型能够准确地预测纤维尾砂胶结充填材料的单轴压缩强度,其性能优于ANN、SVR和ELM方法;纤维含量和纤维长度对纤维尾砂胶结充填材料单轴压缩性能具有重要影响.",
+                "title": "用于研究纤维尾砂胶结充填材料单轴压缩性能的新型人工智能模型",
+                "type": 1
+            },
+            {
+                "journalName": "眼科学报",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "吴乐正"
+                ],
+                "id": "0201288793564",
+                "abstract": "眼科人工智能技术在实践中不断发展,如大数据应用、图像信息分析、机器人时代等,现在又迈上促进生物识别精确化的新台阶,这些实践应用都能更好地保护视器官,使之具备正常视功能,展示出独特的视觉信息特色。眼科人工智能技术不断开辟新领域,取得了诸多新成就。",
+                "title": "“眼与人工智能”迎来时代挑战的新台阶",
+                "type": 1
+            },
+            {
+                "journalName": "眼科学报",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "吴晓航",
+                    "刘力学",
+                    "陈睛晶",
+                    "赖伟翊",
+                    "林铎儒",
+                    "晏丕松",
+                    "刘奕志",
+                    "林浩添"
+                ],
+                "id": "0201288793565",
+                "abstract": "目的:评估白内障人工智能辅助诊断系统在社区筛查中的应用效果。方法:采用前瞻性观察性研究方法对白内障人工辅助诊断系统的应用效果进行分析,结合远程医疗的模式,由社区卫生人员对居民进行病史采集、视力检查和裂隙灯眼前节检查等,将数据上传至云平台,由白内障人工智能辅助诊断系统和人类医生依次进行白内障评估。结果:受检人群中男性所占比例为35.7%,年龄中位数为66岁,裂隙灯眼前节照片有98.7%的图像质量合格。该白内障人工智能辅助诊断系统在外部验证集中检出重度白内障的曲线下面积为0.915。在人类医生建议转诊的病例中,有80.3%也由人工智能系统给出了相同的建议。结论:该白内障人工智能辅助诊断系统在白内障社区筛查的应用中具有较好的可行性和准确性,为开展社区筛查疾病提供了参考依据。",
+                "title": "白内障人工智能辅助诊断系统在社区筛查中的应用效果",
+                "type": 1
+            },
+            {
+                "journalName": "眼科学报",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "王晓晖",
+                    "Bryan Spencer(综述)",
+                    "程文(审校)"
+                ],
+                "id": "0201288793572",
+                "abstract": "人工智能(artificial intelligence,AI)为解决中国患者“看病难”问题提供了可行方案。眼科AI已实现为患者提供筛查、远程诊断及治疗建议等方面的服务,能显著减轻医疗资源不足的压力和患者的经济负担。而AI的应用过程中,给医疗管理带来的挑战应引起重视。本文从医疗管理的角度,总结分析AI在眼科医疗过程中,尤其是交接环节中出现的主要问题,提出对策与建议,并讨论AI在眼科医疗的应用展望。",
+                "title": "人工智能在眼科医疗管理过程中的应用:挑战与展望",
+                "type": 1
+            },
+            {
+                "journalName": "眼科学报",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "赵越越(综述)",
+                    "康刚劲(审校)"
+                ],
+                "id": "0201288793576",
+                "abstract": "人工智能(artificial intelligence,AI)在眼科领域的应用不断深入、拓展,目前在糖尿病性视网膜病变、白内障、青光眼以及早产儿视网膜病变在内的多种常见眼病的诊疗中逐渐成为研究热点。AI使医疗资源短缺、诊断标准缺乏、诊疗技术水平低下的现状得到改善,为白内障的诊疗开辟了一条“新赛道”。本文旨在综述AI在白内障诊疗中的应用现状、进展及局限性,为AI在白内障领域的进一步开发、应用及推广提供更多信息。",
+                "title": "人工智能在白内障诊疗中的应用进展",
+                "type": 1
+            },
+            {
+                "journalName": "中国有色金属学报：英文版",
+                "journalBase": [
+                    "2",
+                    "3"
+                ],
+                "year": 2021,
+                "author": [
+                    "喻智",
+                    "史秀志",
+                    "陈新",
+                    "周健",
+                    "齐冲冲",
+                    "陈秋松",
+                    "饶帝军"
+                ],
+                "id": "0201288960515",
+                "abstract": "为降低纤维尾砂胶结充填材料单轴压缩强度数据的获取难度,综合分析常规充填材料参数与纤维参数对其单轴压缩性能的影响,结合元启发式算法(樽海鞘算法, SSA)与极限学习机技术(ELM),提出一种新型人工智能模型(SSA-ELM)。为检验模型可靠性,开展720组不同灰砂质量比、固体质量浓度、纤维含量、纤维长度和养护时间的纤维尾砂胶结充填材料单轴抗压实验以建立充填材料强度性能数据库。研究结果表明,训练好的SSA-ELM模型能够准确地预测纤维尾砂胶结充填材料的单轴压缩强度,其性能优于ANN、SVR和ELM方法;纤维含量和纤维长度对纤维尾砂胶结充填材料单轴压缩性能具有重要影响。",
+                "title": "用于研究纤维尾砂胶结充填材料单轴压缩性能的新型人工智能模型",
+                "type": 1
+            },
+            {
+                "journalName": "汉语世界：英文版",
+                "journalBase": [],
+                "year": 2021,
+                "author": [],
+                "id": "0201288970010",
+                "abstract": "In parts of China,the Al-driven future of science fiction is already here・Cameras can recognize individuals in a crowd by analyzing their face;smart speakers interact with household appliances controlled with the swipe of a smart phone;and even love is increasingly digitized,with virtual\"girl&icnds''''able to empathi with their real life partners.Yet so much online living produces vast amounts of data,much of it unsecured.",
+                "title": "你爱人工智能吗?",
+                "type": 1
+            },
+            {
+                "journalName": "数字中医药(英文)",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "梁若蘭",
+                    "关冰河",
+                    "陈霜",
+                    "陈浩然",
+                    "江家伟",
+                    "李文荣",
+                    "沈剑刚"
+                ],
+                "id": "0201289032499",
+                "abstract": "人工智能(AI)能够模仿人类的认知功能并具有执行类似于人类应对不确定环境下智力活动的能力。人工智能技术的迅速发展产生了能够分析大数据的强大工具,人工智能用于医疗服务可以为医生作出更准确的临床决策,甚至具有取代人类在医疗保健领域认知的潜能。先进的人工智能技术也为探索传统中医药的科学基础以及发展标准化和数字化中医脉象诊断方法创造了新的机遇。我们在本研究回顾并讨论了人工智能技术在中医脉诊中的潜在应用,主要讨论了以下方面内容:(1)简要介绍中医脉诊的基本概念和知识;(2)人工智能技术的标志性发展以及其深度学习程序在医学实践中的应用;(3)人工智能技术在中医脉诊中的最新进展;(4)人工智能技术在中医脉诊中的挑战和前景。总之,传统中医与现代人工智能技术结合将为理解中医脉诊基础的科学原理带来新的思路,并为人工智能深度学习技术的发展创造机会,以实现中医脉诊的标准化和数码化。",
+                "title": "当人工智能遇上传统中医:通往识别脉象模式的宝盒",
+                "type": 1
+            },
+            {
+                "journalName": "数字中医药（英文）",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "梁若蘭",
+                    "关冰河",
+                    "陈霜",
+                    "陈浩然",
+                    "江家伟",
+                    "李文荣",
+                    "沈剑"
+                ],
+                "id": "0201289046058",
+                "abstract": "人工智能(AI)能够模仿人类的认知功能并具有执行类似于人类应对不确定环境下智力活动的能力.人工智能技术的迅速发展产生了能够分析大数据的强大工具,人工智能用于医疗服务可以为医生作出更准确的临床决策,甚至具有取代人类在医疗保健领域认知的潜能.先进的人工智能技术也为探索传统中医药的科学基础以及发展标准化和数字化中医脉象诊断方法创造了新的机遇.我们在本研究回顾并讨论了人工智能技术在中医脉诊中的潜在应用,主要讨论了以下方面内容:(1)简要介绍中医脉诊的基本概念和知识;(2)人工智能技术的标志性发展以及其深度学习程序在医学实践中的应用;(3)人工智能技术在中医脉诊中的最新进展;(4)人工智能技术在中医脉诊中的挑战和前景.总之,传统中医与现代人工智能技术结合将为理解中医脉诊基础的科学原理带来新的思路,并为人工智能深度学习技术的发展创造机会,以实现中医脉诊的标准化和数码化.",
+                "title": "当人工智能遇上传统中医:通往识别脉象模式的宝盒",
+                "type": 1
+            },
+            {
+                "journalName": "工程（英文）",
+                "journalBase": [],
+                "year": 2021,
+                "author": [
+                    "Khalid Elbaz",
+                    "沈水龙",
+                    "周安楠",
+                    "尹振宇",
+                    "吕海敏"
+                ],
+                "id": "0201290123925",
+                "abstract": "滚刀的磨损是一个影响盾构隧道掘进效率和滚刀更换决策的关键问题.本研究提出了一种估算滚刀寿命(Hf)的新模型,模型将分组数据处理(GMDH)型神经网络(NN)与遗传算法(GA)整合在一起.遗传算法优化了GMDH网络结构的效率和有效性,使得每个神经元都能从上一层网络搜索最佳连接集.使用所提出的模型,可以分析盾构机性能数据库、滚刀的消耗、地质条件和操作参数等监测数据.为了验证所提出模型的性状,进行了案例研究,用数据说明了混合模型的优越性.结果表明,使用该混合模型预测的滚刀使用寿命的准确率高.灵敏度分析表明,盾构切入速率(PR)对滚刀的使用寿命有重要影响.研究结果对盾构隧道的设计和施工都很有意义.",
+                "title": "遗传算法与分组数据处理神经网络相结合的人工智能预测盾构掘进过程中滚刀的寿命",
+                "type": 1
+            },
+            {
+                "journalName": "中国法学：英文版",
+                "journalBase": [
+                    "5"
+                ],
+                "year": 2021,
+                "author": [
+                    "Liu Wanting"
+                ],
+                "id": "0201291798185",
+                "abstract": "Since the beginning of the 21st century, human beings have successively entered three new times which are interrelated and slightly different from each other. The era of the network society, the era of big data and the era of artificial intelligence (AI) jointly mark the three sides of the new era of human beings and jointly form a new social era.",
+                "title": "人工智能领域下合同的风险分配",
+                "type": 1
+            }
+        ]
         var totalPage = 0;
         if (this.param.language == 0) {
             this.param.isCnCallBackList=false;
@@ -1192,6 +1554,9 @@ function selectReferDocPop(){
        /*  if(!this.checkNumInput()){
              return;
          }*/
+         $('.selectLiteratureContent').animate({
+             scrollTop: $('.selectLiteratureContent').scrollTop() + 200
+         })
          var params ={};
          var times=1;
          if(this.param.language==0) {
@@ -1223,6 +1588,7 @@ function selectReferDocPop(){
         	  params.current_page=2;
              this.searchReferDocList(params);
          }
+
 
      }
 
@@ -1813,13 +2179,13 @@ function selectReferDocPop(){
             this.param.language=$(e.currentTarget).attr("data-language");
             this.changeLanguage()
 
-            if (this.param.nextStepCnTypeFlag == 'Cntrue' && this.param.language==0&&this.param.cnDocList.length== 0) {
+            if (this.param.nextStepCnTypeFlag == 'Cntrue' && this.param.language==0&&this.param.cnDocList.length== 0 && this.param.cnDocList.length!=0) {
                 $('.nextStepContent').show();
                 $('.nextStepContent .tabItem').eq(0).click();
                 $('.selectLiteratureContent').hide();
                 return false;
             }
-            if (this.param.nextStepEnTypeFlag == 'Entrue' && this.param.language==1&&this.param.enDocList.length== 0) {
+            if (this.param.nextStepEnTypeFlag == 'Entrue' && this.param.language==1&&this.param.enDocList.length== 0 && this.param.enDocList.length!=0) {
                 $('.nextStepContent').show();
                 $('.nextStepContent .tabItem').eq(1).click();
                 $('.selectLiteratureContent').hide();
@@ -2366,15 +2732,19 @@ function selectReferDocPop(){
         if(this.param.language==0){
             this.param.nextStepCnTypeFlag = ''
             $(".nextStepContent").hide();
-            $(".selectLiteratureContent .tabItem").eq(0).click();
+            $(".selectLiteratureContent .tabItem").eq(0).addClass('active').siblings().removeClass('active');
+            $(".cnIslitertureResultall").show();
+            $(".enIslitertureResultall").hide();
         }else{
             this.param.nextStepEnTypeFlag = ''
             $(".nextStepContent").hide();
-            $(".selectLiteratureContent .tabItem").eq(1).click();
+            $(".selectLiteratureContent .tabItem").eq(1).addClass('active').siblings().removeClass('active');
+            $(".cnIslitertureResultall").hide();
+            $(".enIslitertureResultall").show();
         }
-        $(".selectLiteratureFooter").show();
         $(".nextSelectLiteratureFooter").hide();
         $('.selectLiteratureContent').show()
+        $(".selectLiteratureFooter").show();
         $(".nextStepContent").hide();
     }
 

@@ -283,7 +283,7 @@ function selectReferDocPop(){
 			                        <span>中文会议</span>
 			                    </label>
 			                </div>
-			                <div class="selectCnAndEnItem">
+			                <div class="selectCnAndEnItem" id="cnJournalLevelContainer">
 			                    <h5>期刊等级：</h5>
 			                    <label>
 			                        <input type="radio" name="selectJournalLevel" value="0" >
@@ -754,7 +754,7 @@ function selectReferDocPop(){
 			                        <span>英文会议</span>
 			                    </label>
 			                </div>
-			                <div class="selectCnAndEnItem">
+			                <div class="selectCnAndEnItem" id="enJournalLevelContainer">
 			                    <h5>期刊等级：</h5>
 			                    <label>
 			                        <input type="radio" name="selectJournalLevel" value="0" checked>
@@ -1852,6 +1852,9 @@ function selectReferDocPop(){
             this.param.language=$(e.currentTarget).attr("data-language");
             this.changeLanguage()
 
+            // 期刊等级状态显示隐藏
+            this.journalLevelShow();
+
             if (this.param.nextStepCnTypeFlag == 'Cntrue' && this.param.language==0&&this.param.cnDocList.length== 0 && this.param.cnDocList.length!=0) {
                 $('.nextStepContent').show();
                 $('.nextStepContent .tabItem').eq(0).click();
@@ -2475,6 +2478,23 @@ function selectReferDocPop(){
             $('.nextStepContent #list_current_page').text(this.param.nextEnCurrent)
         }
         this.renderNextStepSelectPop()
+    }
+
+    // 期刊等级状态显示隐藏
+    this.journalLevelShow = () => {
+        if (this.param.language == 0) {
+            if (!$('input[name="selectLiteratureType"][value="1"]').prop('checked')) {
+                $('#cnJournalLevelContainer').hide();
+            } else {
+                $('#cnJournalLevelContainer').show();
+            }
+        } else {
+            if (!$('input[name="selectLiteratureType"][value="4"]').prop('checked')) {
+                $('#enJournalLevelContainer').hide();
+            } else {
+                $('#enJournalLevelContainer').show();
+            }
+        }
     }
 
 }

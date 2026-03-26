@@ -160,12 +160,15 @@
   margin-right: 0.08rem;
 }
 
-#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input[type='checkbox'], #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input[type='checkbox'] {
+#sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label input[type='checkbox'],
+#sclectDocPopOnly .nextStepContent .selectCnAndEnItem label input[type='checkbox'],
+#aiSelectMaskOnly input[type='checkbox']{
   width: 0.25rem;
   height: 0.25rem;
   border: 0.02rem solid #999999;
   border-radius: 0.05rem;
   background: #fff;
+  margin-right: 0;
 }
 #sclectDocPopOnly .selectLiteratureContent .selectCnAndEnItem label span, #sclectDocPopOnly .nextStepContent .selectCnAndEnItem label span {
   font-family: PingFang SC, PingFang SC;
@@ -543,7 +546,7 @@
 
 #sclectDocPopOnly .selectLiteratureContent .literatureList .noData {
   width: 100%;
-  padding-bottom: 1.4rem;
+  padding-bottom: 3.4rem;
 }
 #sclectDocPopOnly .selectLiteratureContent .literatureList .noData img {
   display: block;
@@ -557,7 +560,8 @@
   color: #666;
 }
 
-#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading {
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading,
+.noliteratureListStatus .searchLoading {
   width: 4rem;
   height: 1.8rem;
   margin: 0 auto;
@@ -567,7 +571,8 @@
   padding-bottom: 3rem;
   position: relative;
 }
-#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg {
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg ,
+.noliteratureListStatus .searchLoading .searchLoadingImg {
   position: absolute;
   top: 0.8rem;
   left: 50%;
@@ -577,19 +582,21 @@
   transform-origin: 50% 0.4rem;
   animation: loaddingCircle 2.5s linear infinite;
 }
-#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg img {
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading .searchLoadingImg img ,
+.noliteratureListStatus .searchLoading .searchLoadingImg img {
   width: 100%;
   height: 100%;
   background: url(../../../newimg/ai/model/search_2.png) no-repeat center;
   background-size: 100%;
   animation: antiRotate 2.5s linear infinite;
 }
-#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading p {
+#sclectDocPopOnly .selectLiteratureContent .literatureList .searchLoading p ,
+.noliteratureListStatus .searchLoading p {
   width: 100%;
   position: absolute;
-  bottom: -0.3rem;
+  bottom: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: 0.22rem;
   color: #666;
@@ -1531,7 +1538,7 @@
   margin-top: 0.3rem;
   padding-top: 0.2rem;
   padding-bottom: 1.3rem;
-  max-height: 59vh;
+  max-height: 62vh;
   background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -1877,7 +1884,9 @@
 #searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded {
   pointer-events: none;
 }
-
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded .searchAbsTogg {
+  pointer-events: initial;
+}
 #searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter {
 	position: fixed;
     bottom: 0;
@@ -2150,11 +2159,13 @@
 
 
 /* 多选框选中值 */
-#sclectDocPopOnly input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent input[type='checkbox']:checked {
+#sclectDocPopOnly input[type='checkbox']:checked, #sclectDocPopOnly .nextStepContent input[type='checkbox']:checked,
+#aiSelectMaskOnly input[type='checkbox']:checked {
   width: 0.26rem !important;
   height: 0.26rem !important;
   background: url(../img/checkbox.png) no-repeat !important;
   background-size: contain !important;
   border-radius: 0 !important;
   border: none !important;
+  margin-right: 0 !important;
 }

@@ -1187,6 +1187,7 @@ function selectReferDocPop(){
      
      // 空数据结构
      this.noDataHtml = (notype) => {
+         this.hideLoading();
     	 notype=(typeof notype=="undefined"||notype==null)?1:notype;
     	 let nodata=' <p style="text-align: center;font-size: 0.22rem;color: #666;">暂无更多相关文献，</p> <p style="text-align: center;font-size: 0.22rem;color: #666;">建议您修改筛选条件或关键词重新获取文献</p>';
     	 if(notype==2){
@@ -1214,7 +1215,11 @@ function selectReferDocPop(){
 	         </div>
 	     `);
      }
-     
+
+     /* 隐藏查找动画 */
+     this.hideLoading = function(){
+        $('.searchLoading').parent().remove();
+     }
 
      // 再次检索文献
      this.searchAgain=function(){
@@ -1838,6 +1843,7 @@ function selectReferDocPop(){
         })
         // 中英文切换
         $('body').on('click', `.selectLiteratureContent .tabItem`, (e) => {
+            this.hideLoading();
             $(e.currentTarget).addClass("active").siblings().removeClass('active');
             if($('#selectDocPop .contineFindLiterature').length<= 0){
                 this.getSearchParam();

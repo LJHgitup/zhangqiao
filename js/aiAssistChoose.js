@@ -258,19 +258,15 @@ function aiAssistChoose () {
 
     // 处理文献数量输入
     this.changeLiteratureCount = (e) => {
-        let originalVal = $(e.target).val().trim();
+        const $input = $(e.target);
+        let val = $input.val().trim().replace(/\D/g, '');
+        val = val.slice(0, 3);
 
-        let val = originalVal.replace(/\D/g, '');
-        val = val.replace(/^0+/, '') || '0';
+        const num = Number(val);
+        const $tip = $input.parent().siblings('.literatureMaxTip');
+        $tip.toggle(num > 100);
 
-        if (val.length >= 3) {
-            val = val.slice(0, 3);
-            $(e.target).parent().siblings(".literatureMaxTip").show();
-        } else {
-            $(e.target).parent().siblings(".literatureMaxTip").hide();
-        }
-
-        $(e.target).val(val);
+        $input.val(val);
     }
 
     // 获取结果

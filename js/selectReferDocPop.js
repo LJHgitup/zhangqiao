@@ -2104,8 +2104,8 @@ function selectReferDocPop(){
                             <div id="search_next_page">下页</div>
                         </div>
                         <div class="searchRecordsTotalContainer">
-                                            本次操作已选择中文文献* <span class="uploadSum">0</span> 篇，
-                                            英文文献* <span class="selectSum">0</span> 篇；
+                                            本次操作已选择中文文献* <span class="uploadSum">${this.param.tempCnDocList.length}</span> 篇，
+                                            英文文献* <span class="selectSum">${this.param.tempEnDocList.length}</span> 篇；
                         </div>
                     </div>
                 </div>

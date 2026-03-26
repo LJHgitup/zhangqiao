@@ -1531,7 +1531,7 @@
   margin-top: 0.3rem;
   padding-top: 0.2rem;
   padding-bottom: 1.3rem;
-  max-height: 62vh;
+  max-height: 59vh;
   background: linear-gradient(360deg, #F5F7FB 0%, #FFF 100%);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -1872,6 +1872,10 @@
   background: #bbbbbb !important;
   color: #fff !important;
   display: none;
+}
+
+#searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsPopUpList .searchListAdded {
+  pointer-events: none;
 }
 
 #searchRecordsPopUpOnly .searchRecordsPopUp .searchRecordsPopUpContent .searchRecordsFooter {

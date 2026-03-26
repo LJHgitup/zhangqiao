@@ -2397,13 +2397,14 @@ function selectReferDocPop(){
 
     /* 返回上一步 */
     this.backStepPopUp = () => {
-
+        $(".selectLiteratureContent .literatureAdded .optionClass").hide();
         if(this.param.language==0){
             this.param.nextStepCnTypeFlag = ''
             $(".nextStepContent").hide();
             $(".selectLiteratureContent .tabItem").eq(0).addClass('active').siblings().removeClass('active');
             $(".cnIslitertureResultall").show();
             $(".enIslitertureResultall").hide();
+
         }else{
             this.param.nextStepEnTypeFlag = ''
             $(".nextStepContent").hide();

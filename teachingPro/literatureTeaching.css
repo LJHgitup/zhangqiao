@@ -1,0 +1,131 @@
+.setLiteratureTeaching {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+}
+.setLiteratureTeaching .setLiteratureContent {
+  width: 98%;
+  max-height: 11rem;
+  background: #fff;
+  margin: 25% auto 0 auto;
+  padding: 0.35rem 0.2rem 0.35rem 0.2rem;
+  box-sizing: border-box;
+  border-radius: 0.2rem;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.setLiteratureTeaching .setLiteratureContent .setLiteratureClose {
+  width: 0.35rem;
+  height: 0.35rem;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  background: url(./img/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+.setLiteratureTeaching .setLiteratureContent .setLiteratureTitle {
+  font-size: 0.36rem;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+.setLiteratureTeaching .setLiteratureContent .setLiteratureDesc {
+  width: fit-content;
+  padding-right: 0.28rem;
+  height: 0.6rem;
+  background: url(./img/desc.png) no-repeat;
+  background-size: 100% 100%;
+  color: #333333;
+  text-align: left;
+  text-indent: 0.3rem;
+  font-style: normal;
+  text-transform: none;
+  line-height: 0.6rem;
+  font-size: 0.28rem;
+  margin: 0 auto 0.2rem auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.setLiteratureTeaching .setLiteratureContent .setLiteratureDesc .setLiteratureNum {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: #DAEDFF;
+  box-shadow: 0 0.08rem 0.32rem 0 rgba(52, 117, 254, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: -0.42rem;
+  text-align: center;
+  line-height: 0.6rem;
+  text-indent: 0;
+  font-weight: bold;
+  font-size: 0.32rem;
+  color: #3476FE;
+  text-shadow: 0 0.08rem 0.32rem 0 rgba(52, 117, 254, 0.1);
+}
+.setLiteratureTeaching .setLiteratureContent .literatureType {
+  width: 100%;
+  height: auto;
+  background: #F6F9FC;
+  border-radius: 0.2rem;
+  border: 0.02rem solid #C3D6F6;
+}
+.setLiteratureTeaching .setLiteratureContent .literatureType .literatureTypeTitle {
+  width: 2.24rem;
+  height: 0.52rem;
+  background: url(./img/setTitle.png) no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 0.52rem;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: bold;
+  font-size: 0.28rem;
+  color: #FFFFFF;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 auto 0.2rem auto;
+}
+.setLiteratureTeaching .setLiteratureContent .literatureType .childTitle {
+  width: 94%;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  margin: 0 auto 0.2rem auto;
+  text-transform: none;
+  border-radius: 0.2rem;
+  border: 0.02rem dashed #C3D6F6;
+  font-size: 0.29rem;
+  color: #996af3;
+  font-style: normal;
+  text-align: center;
+  font-weight: bold;
+}
+.setLiteratureTeaching .setLiteratureContent .childTitleImg {
+  width: 100%;
+  margin: 0.25rem auto;
+}
+.setLiteratureTeaching .setLiteratureContent .childTitleImgSelt {
+  height: 6rem;
+  background: url(./img/seltliterature.png) no-repeat;
+  background-size: 100% 100%;
+}
+.setLiteratureTeaching .setLiteratureContent .childTitleImgNo {
+  height: 6rem;
+  background: url(./img/searchImg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.setLiteratureTeaching .setLiteratureContent .uploadLiteImg {
+  height: 9rem;
+  background: url(./img/uploadLiteImg.png) no-repeat;
+  background-size: 100% 100%;
+}
+/*# sourceMappingURL=literatureTeaching.css.map */

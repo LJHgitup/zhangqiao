@@ -1,5 +1,6 @@
 function literatureTeaching(params){
     this.params = {
+        // 弹窗容器
         container: null,
     }
 

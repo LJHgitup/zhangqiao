@@ -1,21 +1,15 @@
 function teachingPro(params){
     this.params = {
-        // 弹窗容器
-        container: null,
     }
 
     // 事件
     this.init = ()=> {
         this.params = {...params};
-        if (!this.params.container) {
-            return;
-        }
         this.createHtml();
     }
 
     // 弹窗HTML结构
     this.createHtml = ()=> {
-        $(this.params.container).empty();
 
         let html = `
             <div class="addFileTeachingOnly">
@@ -43,7 +37,7 @@ function teachingPro(params){
                 </div>
             </div>
         `
-        $(this.params.container).append(html);
+        $('body').append(html);
     }
 
     this.init();

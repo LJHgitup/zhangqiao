@@ -13,13 +13,11 @@
 	<link rel="stylesheet" type="text/css" href="https://m.zhangqiaokeyan.com/v/js/layui/css/layui.css?v=5.5.8">
 	<link rel="stylesheet" type="text/css" href="https://m.zhangqiaokeyan.com/v/css/common.css?v=5.5.8">
 	<link href="https://www.zhangqiaokeyan.com/v/css/tip.css?v=5.12.13" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="./teaching.css">
-	<link rel="stylesheet" href="./literatureTeaching.css">
+	<link rel="stylesheet" href="./css/teaching.css">
+	<link rel="stylesheet" href="./css/literatureTeaching.css">
 </head>
 
 <body>
-	<div id="containerTeaching"></div>
-	<div id="containerLiteratureTeaching"></div>
 	
 	<script type="text/javascript" src="https://m.zhangqiaokeyan.com/v/js/layui/layui.js?v=5.5.8"></script>
 	<script src="https://www.zhangqiaokeyan.com/v/js/layui/layui.lastest.js?v=5.12.13" type="text/javascript"></script>
@@ -30,12 +28,8 @@
 	<script type="text/javascript" src="./js/teachingPro.js"></script>
 	<script type="text/javascript" src="./js/literatureTeaching.js"></script>
 	<script type="text/javascript">
-		/*const teachingProHtml = new teachingPro({
-			container: '#containerTeaching',
-		});*/
-		const literatureTeachingHtml = new literatureTeaching({
-			container: '#containerLiteratureTeaching',
-		});
+		const teachingProHtml = new teachingPro();
+		const literatureTeachingHtml = new literatureTeaching();
 	</script>
 </body>
 </html>

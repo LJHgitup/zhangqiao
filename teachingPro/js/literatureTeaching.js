@@ -1,21 +1,14 @@
 function literatureTeaching(params){
     this.params = {
-        // 弹窗容器
-        container: null,
     }
 
     // 事件
     this.init = ()=> {
-        this.params = {...params};
-        if (!this.params.container) {
-            return;
-        }
         this.createHtml();
     }
 
     // 弹窗HTML结构
     this.createHtml = ()=> {
-        $(this.params.container).empty();
         let html = `
             <div class="setLiteratureTeaching">
                 <div class="setLiteratureContent">
@@ -59,10 +52,11 @@ function literatureTeaching(params){
                             <div class="childTitleImg uploadLiteImg"></div>
                         </div>
                     </div>
+                    <div class="literatureTeachingText">以上任一模式下，都可以申请获取原文</div>
                 </div>
             </div>
         `
-        $(this.params.container).append(html);
+        $('body').append(html);
     }
 
     this.init();

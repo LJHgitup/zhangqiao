@@ -25,7 +25,7 @@
   position: absolute;
   top: 0.2rem;
   right: 0.2rem;
-  background: url(./img/close.png) no-repeat;
+  background: url(../img/close.png) no-repeat;
   background-size: 100% 100%;
 }
 .setLiteratureTeaching .setLiteratureContent .setLiteratureTitle {
@@ -42,7 +42,7 @@
   width: fit-content;
   padding-right: 0.28rem;
   height: 0.6rem;
-  background: url(./img/desc.png) no-repeat;
+  background: url(../img/desc.png) no-repeat;
   background-size: 100% 100%;
   color: #333333;
   text-align: left;
@@ -82,7 +82,7 @@
 .setLiteratureTeaching .setLiteratureContent .literatureType .literatureTypeTitle {
   width: 2.24rem;
   height: 0.52rem;
-  background: url(./img/setTitle.png) no-repeat;
+  background: url(../img/setTitle.png) no-repeat;
   background-size: 100% 100%;
   text-align: center;
   line-height: 0.52rem;
@@ -102,7 +102,6 @@
   margin: 0 auto 0.2rem auto;
   text-transform: none;
   border-radius: 0.2rem;
-  border: 0.02rem dashed #C3D6F6;
   font-size: 0.29rem;
   color: #996af3;
   font-style: normal;
@@ -115,17 +114,25 @@
 }
 .setLiteratureTeaching .setLiteratureContent .childTitleImgSelt {
   height: 6rem;
-  background: url(./img/seltliterature.png) no-repeat;
+  background: url(../img/seltliterature.png) no-repeat;
   background-size: 100% 100%;
 }
 .setLiteratureTeaching .setLiteratureContent .childTitleImgNo {
   height: 6rem;
-  background: url(./img/searchImg.png) no-repeat;
+  background: url(../img/searchImg.png) no-repeat;
   background-size: 100% 100%;
 }
 .setLiteratureTeaching .setLiteratureContent .uploadLiteImg {
   height: 9rem;
-  background: url(./img/uploadLiteImg.png) no-repeat;
+  background: url(../img/uploadLiteImg.png) no-repeat;
   background-size: 100% 100%;
+}
+.setLiteratureTeaching .setLiteratureContent .literatureTeachingText {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.28rem;
+  color: #F33958;
+  margin-top: 0.25rem;
 }
 /*# sourceMappingURL=literatureTeaching.css.map */

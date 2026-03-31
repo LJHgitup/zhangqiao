@@ -26,7 +26,7 @@
   position: absolute;
   top: 0.2rem;
   right: 0.2rem;
-  background: url(./img/close.png) no-repeat;
+  background: url(../img/close.png) no-repeat;
   background-size: 100% 100%;
   z-index: 99;
 }
@@ -44,7 +44,7 @@
   width: fit-content;
   padding-right: 0.28rem;
   height: 0.6rem;
-  background: url(./img/desc.png) no-repeat;
+  background: url(../img/desc.png) no-repeat;
   background-size: 100% 100%;
   color: #333333;
   text-align: left;
@@ -94,11 +94,11 @@
   margin-top: 0.2rem;
 }
 .addFileTeachingOnly .addFileTeachingContent .addFileTeachingItem .setTableOrChart {
-  background: url(./img/tableOrChart.png) no-repeat;
+  background: url(../img/tableOrChart.png) no-repeat;
   background-size: 100% 94%;
 }
 .addFileTeachingOnly .addFileTeachingContent .addFileTeachingItem .setTableOrChartReq {
-  background: url(./img/tableOrChartReq.png) no-repeat;
+  background: url(../img/tableOrChartReq.png) no-repeat;
   background-size: 92% 90%;
 }
 /*# sourceMappingURL=teaching.css.map */
